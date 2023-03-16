@@ -7,15 +7,8 @@
 
 import SwiftUI
 
-struct OutboundVmessConfig {
-    var address = String()
-    var port: UInt16?
-    var ID = String()
-    var alterid = String()
-}
-
 struct Vmess: View {
-    @Binding var protocol_config: OutboundVmessConfig
+    @Binding var protocol_config: VmessSettingsObject
     let leading_text_width: CGFloat = 55
     var body: some View {
         VStack {
@@ -45,6 +38,6 @@ struct Vmess: View {
 
 struct Vmess_Previews: PreviewProvider {
     static var previews: some View {
-        Vmess(protocol_config: .constant(OutboundVmessConfig()))
+        Vmess(protocol_config: .constant(VmessSettingsObject()))
     }
 }

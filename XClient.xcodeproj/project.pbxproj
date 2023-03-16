@@ -20,7 +20,7 @@
 		B568E1E729C1CEB7002DC185 /* TCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E629C1CEB7002DC185 /* TCP.swift */; };
 		B568E1E929C2A394002DC185 /* TLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E829C2A394002DC185 /* TLS.swift */; };
 		B568E1EB29C2A710002DC185 /* StreamSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1EA29C2A710002DC185 /* StreamSettingsView.swift */; };
-		B568E1ED29C2C201002DC185 /* Outbound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1EC29C2C201002DC185 /* Outbound.swift */; };
+		B568E1ED29C2C201002DC185 /* OutboundObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1EC29C2C201002DC185 /* OutboundObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,7 @@
 		B568E1E629C1CEB7002DC185 /* TCP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCP.swift; sourceTree = "<group>"; };
 		B568E1E829C2A394002DC185 /* TLS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLS.swift; sourceTree = "<group>"; };
 		B568E1EA29C2A710002DC185 /* StreamSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamSettingsView.swift; sourceTree = "<group>"; };
-		B568E1EC29C2C201002DC185 /* Outbound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outbound.swift; sourceTree = "<group>"; };
+		B568E1EC29C2C201002DC185 /* OutboundObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutboundObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,12 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				B50B3CD729C1B779000414AC /* XClientApp.swift */,
-				B50B3CD929C1B779000414AC /* ContentView.swift */,
-				B568E1E529C1CCBB002DC185 /* StreamProtocols */,
+				B5C9D4BE29C3134F00608F37 /* Views */,
 				B50B3CDB29C1B779000414AC /* Assets.xcassets */,
-				B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */,
-				B568E1EA29C2A710002DC185 /* StreamSettingsView.swift */,
-				B50B3D0229C1B7BD000414AC /* ProxyProtocols */,
 				B50B3CE029C1B779000414AC /* XClient.entitlements */,
 				B568E1E429C1BBCA002DC185 /* Models */,
 				B50B3CDD29C1B779000414AC /* Preview Content */,
@@ -160,7 +156,7 @@
 		B568E1E429C1BBCA002DC185 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B568E1EC29C2C201002DC185 /* Outbound.swift */,
+				B568E1EC29C2C201002DC185 /* OutboundObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,6 +168,18 @@
 				B568E1E829C2A394002DC185 /* TLS.swift */,
 			);
 			path = StreamProtocols;
+			sourceTree = "<group>";
+		};
+		B5C9D4BE29C3134F00608F37 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */,
+				B568E1EA29C2A710002DC185 /* StreamSettingsView.swift */,
+				B50B3CD929C1B779000414AC /* ContentView.swift */,
+				B568E1E529C1CCBB002DC185 /* StreamProtocols */,
+				B50B3D0229C1B7BD000414AC /* ProxyProtocols */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,7 +315,7 @@
 				B568E1E129C1BB1C002DC185 /* ProxySettingsView.swift in Sources */,
 				B568E1E729C1CEB7002DC185 /* TCP.swift in Sources */,
 				B50B3CDA29C1B779000414AC /* ContentView.swift in Sources */,
-				B568E1ED29C2C201002DC185 /* Outbound.swift in Sources */,
+				B568E1ED29C2C201002DC185 /* OutboundObject.swift in Sources */,
 				B568E1E929C2A394002DC185 /* TLS.swift in Sources */,
 				B568E1EB29C2A710002DC185 /* StreamSettingsView.swift in Sources */,
 				B50B3CD829C1B779000414AC /* XClientApp.swift in Sources */,

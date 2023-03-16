@@ -7,16 +7,8 @@
 
 import SwiftUI
 
-struct OutboundVLESSConfig {
-    var address = String()
-    var port: UInt16?
-    var ID = String()
-    var encryption = String()
-    var flow = String()
-}
-
 struct VLESS: View {
-    @Binding var protocol_config: OutboundVLESSConfig
+    @Binding var protocol_config: VlessSettingsObject
     let leading_text_width: CGFloat = 55
     var body: some View {
         VStack {
@@ -49,6 +41,6 @@ struct VLESS: View {
 
 struct VLESS_Previews: PreviewProvider {
     static var previews: some View {
-        VLESS(protocol_config: .constant(OutboundVLESSConfig()))
+        VLESS(protocol_config: .constant(VlessSettingsObject()))
     }
 }
