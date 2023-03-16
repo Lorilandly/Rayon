@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var outboundobj = Outbound.Data()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        HStack {
+            List {}
+                .frame(width: 100.0)
+            VStack(spacing: 20) {
+                ProxySettingsView()
+                StreamSettingsView()
+                
+            }
         }
         .padding()
     }
@@ -21,6 +25,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(outboundobj: Outbound.Data())
     }
 }

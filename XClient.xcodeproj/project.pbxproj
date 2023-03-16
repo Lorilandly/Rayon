@@ -14,6 +14,13 @@
 		B50B3CEA29C1B77A000414AC /* XClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3CE929C1B77A000414AC /* XClientTests.swift */; };
 		B50B3CF429C1B77A000414AC /* XClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3CF329C1B77A000414AC /* XClientUITests.swift */; };
 		B50B3CF629C1B77A000414AC /* XClientUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3CF529C1B77A000414AC /* XClientUITestsLaunchTests.swift */; };
+		B50B3D0429C1B7D3000414AC /* VLESS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3D0329C1B7D3000414AC /* VLESS.swift */; };
+		B568E1E129C1BB1C002DC185 /* ProxySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */; };
+		B568E1E329C1BB94002DC185 /* Vmess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E229C1BB94002DC185 /* Vmess.swift */; };
+		B568E1E729C1CEB7002DC185 /* TCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E629C1CEB7002DC185 /* TCP.swift */; };
+		B568E1E929C2A394002DC185 /* TLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E829C2A394002DC185 /* TLS.swift */; };
+		B568E1EB29C2A710002DC185 /* StreamSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1EA29C2A710002DC185 /* StreamSettingsView.swift */; };
+		B568E1ED29C2C201002DC185 /* Outbound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1EC29C2C201002DC185 /* Outbound.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +52,13 @@
 		B50B3CEF29C1B77A000414AC /* XClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XClientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50B3CF329C1B77A000414AC /* XClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XClientUITests.swift; sourceTree = "<group>"; };
 		B50B3CF529C1B77A000414AC /* XClientUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XClientUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B50B3D0329C1B7D3000414AC /* VLESS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLESS.swift; sourceTree = "<group>"; };
+		B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxySettingsView.swift; sourceTree = "<group>"; };
+		B568E1E229C1BB94002DC185 /* Vmess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vmess.swift; sourceTree = "<group>"; };
+		B568E1E629C1CEB7002DC185 /* TCP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCP.swift; sourceTree = "<group>"; };
+		B568E1E829C2A394002DC185 /* TLS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLS.swift; sourceTree = "<group>"; };
+		B568E1EA29C2A710002DC185 /* StreamSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamSettingsView.swift; sourceTree = "<group>"; };
+		B568E1EC29C2C201002DC185 /* Outbound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outbound.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +111,13 @@
 			children = (
 				B50B3CD729C1B779000414AC /* XClientApp.swift */,
 				B50B3CD929C1B779000414AC /* ContentView.swift */,
+				B568E1E529C1CCBB002DC185 /* StreamProtocols */,
 				B50B3CDB29C1B779000414AC /* Assets.xcassets */,
+				B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */,
+				B568E1EA29C2A710002DC185 /* StreamSettingsView.swift */,
+				B50B3D0229C1B7BD000414AC /* ProxyProtocols */,
 				B50B3CE029C1B779000414AC /* XClient.entitlements */,
+				B568E1E429C1BBCA002DC185 /* Models */,
 				B50B3CDD29C1B779000414AC /* Preview Content */,
 			);
 			path = XClient;
@@ -127,6 +146,32 @@
 				B50B3CF529C1B77A000414AC /* XClientUITestsLaunchTests.swift */,
 			);
 			path = XClientUITests;
+			sourceTree = "<group>";
+		};
+		B50B3D0229C1B7BD000414AC /* ProxyProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				B50B3D0329C1B7D3000414AC /* VLESS.swift */,
+				B568E1E229C1BB94002DC185 /* Vmess.swift */,
+			);
+			path = ProxyProtocols;
+			sourceTree = "<group>";
+		};
+		B568E1E429C1BBCA002DC185 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B568E1EC29C2C201002DC185 /* Outbound.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B568E1E529C1CCBB002DC185 /* StreamProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				B568E1E629C1CEB7002DC185 /* TCP.swift */,
+				B568E1E829C2A394002DC185 /* TLS.swift */,
+			);
+			path = StreamProtocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +304,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B568E1E129C1BB1C002DC185 /* ProxySettingsView.swift in Sources */,
+				B568E1E729C1CEB7002DC185 /* TCP.swift in Sources */,
 				B50B3CDA29C1B779000414AC /* ContentView.swift in Sources */,
+				B568E1ED29C2C201002DC185 /* Outbound.swift in Sources */,
+				B568E1E929C2A394002DC185 /* TLS.swift in Sources */,
+				B568E1EB29C2A710002DC185 /* StreamSettingsView.swift in Sources */,
 				B50B3CD829C1B779000414AC /* XClientApp.swift in Sources */,
+				B568E1E329C1BB94002DC185 /* Vmess.swift in Sources */,
+				B50B3D0429C1B7D3000414AC /* VLESS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
