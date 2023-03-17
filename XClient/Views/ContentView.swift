@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var outbound = OutboundObject.Data()
+    @State private var outbound = OutboundObject.Data()
     var body: some View {
         HStack {
             List {}
                 .frame(width: 100.0)
             VStack(spacing: 20) {
-                ProxySettingsView(proxyProtocol: $outbound.proxyProtocol, settings: $outbound.proxySettings)
+                ProxySettingsView(proxyProtocol: $outbound.proxyProtocol, settings: $outbound.allProxySettings)
                 StreamSettingsView(streamSettings: $outbound.streamSettings)
                 HStack {
                     Spacer()

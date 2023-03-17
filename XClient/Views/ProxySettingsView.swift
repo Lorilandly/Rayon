@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct ProxySettingsView: View {
-    @State private var protocol_config_vless = VlessSettingsObject()
-    @State private var protocol_config_vmess = VmessSettingsObject()
     @Binding var proxyProtocol: Proxy
-    @Binding var settings: ProxySettings
+    @Binding var settings: AllProxySettings
     
     var body: some View {
         VStack {
@@ -29,9 +27,9 @@ struct ProxySettingsView: View {
             GroupBox {
                 switch proxyProtocol {
                 case .vless:
-                    VLESS(protocol_config: $protocol_config_vless)
+                    VLESS(protocol_config: $settings.vlessSettings)
                 case .vmess:
-                    Vmess(protocol_config: $protocol_config_vmess)
+                    Vmess(protocol_config: $settings.vmessSettings)
                 default:
                     Text("not implemented")
                 }
@@ -42,6 +40,6 @@ struct ProxySettingsView: View {
 
 struct ConnectionSetting_Previews: PreviewProvider {
     static var previews: some View {
-        ProxySettingsView(proxyProtocol: .constant(Proxy.vless), settings: .constant(VlessSettingsObject()))
+        ProxySettingsView(proxyProtocol: .constant(Proxy.vless), settings: .constant(AllProxySettings()))
     }
 }

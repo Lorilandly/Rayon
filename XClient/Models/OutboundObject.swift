@@ -37,12 +37,22 @@ extension OutboundObject {
         var tag: String = "New Server"
         var sendThrough: IPAddress? = IPv4Address("0.0.0.0")
         var proxyProtocol: Proxy = Proxy.vless
-        var proxySettings: ProxySettings = VlessSettingsObject()
+        var allProxySettings: AllProxySettings = AllProxySettings()
         var streamSettings: StreamSettingsObject = StreamSettingsObject()
     }
     
+    // `data` struct and the stored struct is different. The conversion is done here
     var data: Data {
-        Data(tag: tag, sendThrough: sendThrough, proxySettings: proxySettings, streamSettings: streamSettings)
+        var allProxySettings = AllProxySettings()
+        switch proxySettings.proxyProtocol {
+        case .vless:
+            allProxySettings.vlessSettings = proxySettings as! VlessSettingsObject
+        case .vmess:
+            allProxySettings.vmessSettings = proxySettings as! VmessSettingsObject
+        default:
+            break
+        }
+        return Data(tag: tag, sendThrough: sendThrough, proxyProtocol: proxySettings.proxyProtocol, allProxySettings: allProxySettings, streamSettings: streamSettings)
     }
 }
 
@@ -58,21 +68,41 @@ enum Proxy: String, CaseIterable, Identifiable {
     var id: Self { self }
 }
 
-protocol ProxySettings { }
+// only store the used protocol
+protocol ProxySettings {
+    var proxyProtocol: Proxy {get}
+    mutating func unwrap() -> Self
+}
+
+// store all the protocol settings
+struct AllProxySettings {
+    var vlessSettings: VlessSettingsObject = VlessSettingsObject()
+    var vmessSettings: VmessSettingsObject = VmessSettingsObject()
+}
 
 struct VlessSettingsObject: ProxySettings {
+    let proxyProtocol = Proxy.vless
     var address: String = ""
     var port: UInt16?
     var ID: String = ""
     var encryption: String = ""
     var flow: String = ""
+    
+    mutating func unwrap() -> Self {
+        self
+    }
 }
 
 struct VmessSettingsObject: ProxySettings {
+    let proxyProtocol = Proxy.vmess
     var address = String()
     var port: UInt16?
     var ID = String()
     var alterid = String()
+    
+    mutating func unwrap() -> Self {
+        self
+    }
 }
 
 struct StreamSettingsObject {
