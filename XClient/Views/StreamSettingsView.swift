@@ -48,10 +48,10 @@ struct StreamSettingsView: View {
     @ViewBuilder
     func securityView() -> some View {
         switch streamSettings.security {
-                case .tls:
+        case .tls:
             TLS(tlsSettings: $streamSettings.tlsSettings)
-                default:
-                    Text("Not implemented")
+        default:
+            Text("Not implemented")
         }
     }
 }

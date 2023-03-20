@@ -11,8 +11,19 @@ struct ServerView: View {
     @State private var outbound = OutboundObject.Data()
     var body: some View {
         HStack {
-            List {}
-                .frame(width: 100.0)
+            List(outboundExample, id: \.tag) { outboundObject in
+                Text(outboundObject.tag)
+            }
+            .navigationTitle("Servers:")
+            .listStyle(.bordered(alternatesRowBackgrounds: true))
+            .moveDisabled(false)
+            .frame(width: 100.0)
+            .padding()
+            //.toolbar()
+            //.environment(\.editMode, EditMode.active)
+            
+            
+            
             VStack(spacing: 20) {
                 ProxySettingsView(proxyProtocol: $outbound.proxyProtocol, settings: $outbound.allProxySettings)
                 StreamSettingsView(streamSettings: $outbound.streamSettings)

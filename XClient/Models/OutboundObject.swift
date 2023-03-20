@@ -22,16 +22,22 @@ struct OutboundObject {
     var sendThrough: IPAddress?
     var proxySettings: ProxySettings
     var streamSettings: StreamSettingsObject
-    
-    init(tag: String, sendThrough: IPAddress? = nil, proxySettings: ProxySettings, streamSettings: StreamSettingsObject) {
-        self.tag = tag
-        self.sendThrough = sendThrough
-        self.proxySettings = proxySettings
-        self.streamSettings = streamSettings
-    }
 }
 
-extension OutboundObject {
+var outboundExample: [OutboundObject] = [
+    OutboundObject(tag: "server1", proxySettings: VlessSettingsObject(), streamSettings: StreamSettingsObject()),
+    OutboundObject(tag: "server2", proxySettings: VmessSettingsObject(), streamSettings: StreamSettingsObject(security: Security.tls)),
+]
+
+extension OutboundObject: Hashable {
+    static func == (lhs: OutboundObject, rhs: OutboundObject) -> Bool {
+        return lhs.tag == rhs.tag
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(tag)
+    }
+    
     // the user edits Outbound.Data; Outbound gets updated only when "ok" is pressed
     struct Data {
         var tag: String = "New Server"
