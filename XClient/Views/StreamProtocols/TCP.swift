@@ -19,6 +19,7 @@ struct TCP: View {
             TextField("Path:", text: $tcpSettings.path)
                 .disabled(!tcpSettings.http)
         }
+        .frame(width: 300)
     }
 }
 

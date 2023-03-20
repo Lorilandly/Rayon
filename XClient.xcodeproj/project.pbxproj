@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B50B3CD829C1B779000414AC /* XClientApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3CD729C1B779000414AC /* XClientApp.swift */; };
-		B50B3CDA29C1B779000414AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3CD929C1B779000414AC /* ContentView.swift */; };
+		B50B3CDA29C1B779000414AC /* ServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3CD929C1B779000414AC /* ServerView.swift */; };
 		B50B3CDC29C1B779000414AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B50B3CDB29C1B779000414AC /* Assets.xcassets */; };
 		B50B3CDF29C1B779000414AC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B50B3CDE29C1B779000414AC /* Preview Assets.xcassets */; };
 		B50B3CEA29C1B77A000414AC /* XClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3CE929C1B77A000414AC /* XClientTests.swift */; };
@@ -21,6 +21,8 @@
 		B568E1E929C2A394002DC185 /* TLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E829C2A394002DC185 /* TLS.swift */; };
 		B568E1EB29C2A710002DC185 /* StreamSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1EA29C2A710002DC185 /* StreamSettingsView.swift */; };
 		B568E1ED29C2C201002DC185 /* OutboundObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1EC29C2C201002DC185 /* OutboundObject.swift */; };
+		B5C3E5FA29C46139007D708A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3E5F929C46139007D708A /* ContentView.swift */; };
+		B5C3E5FC29C46510007D708A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3E5FB29C46510007D708A /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +45,7 @@
 /* Begin PBXFileReference section */
 		B50B3CD429C1B779000414AC /* XClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50B3CD729C1B779000414AC /* XClientApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XClientApp.swift; sourceTree = "<group>"; };
-		B50B3CD929C1B779000414AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B50B3CD929C1B779000414AC /* ServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerView.swift; sourceTree = "<group>"; };
 		B50B3CDB29C1B779000414AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B50B3CDE29C1B779000414AC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B50B3CE029C1B779000414AC /* XClient.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XClient.entitlements; sourceTree = "<group>"; };
@@ -59,6 +61,8 @@
 		B568E1E829C2A394002DC185 /* TLS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLS.swift; sourceTree = "<group>"; };
 		B568E1EA29C2A710002DC185 /* StreamSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamSettingsView.swift; sourceTree = "<group>"; };
 		B568E1EC29C2C201002DC185 /* OutboundObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutboundObject.swift; sourceTree = "<group>"; };
+		B5C3E5F929C46139007D708A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B5C3E5FB29C46510007D708A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +179,9 @@
 			children = (
 				B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */,
 				B568E1EA29C2A710002DC185 /* StreamSettingsView.swift */,
-				B50B3CD929C1B779000414AC /* ContentView.swift */,
+				B5C3E5F929C46139007D708A /* ContentView.swift */,
+				B50B3CD929C1B779000414AC /* ServerView.swift */,
+				B5C3E5FB29C46510007D708A /* SettingsView.swift */,
 				B568E1E529C1CCBB002DC185 /* StreamProtocols */,
 				B50B3D0229C1B7BD000414AC /* ProxyProtocols */,
 			);
@@ -314,13 +320,15 @@
 			files = (
 				B568E1E129C1BB1C002DC185 /* ProxySettingsView.swift in Sources */,
 				B568E1E729C1CEB7002DC185 /* TCP.swift in Sources */,
-				B50B3CDA29C1B779000414AC /* ContentView.swift in Sources */,
+				B50B3CDA29C1B779000414AC /* ServerView.swift in Sources */,
 				B568E1ED29C2C201002DC185 /* OutboundObject.swift in Sources */,
 				B568E1E929C2A394002DC185 /* TLS.swift in Sources */,
 				B568E1EB29C2A710002DC185 /* StreamSettingsView.swift in Sources */,
+				B5C3E5FA29C46139007D708A /* ContentView.swift in Sources */,
 				B50B3CD829C1B779000414AC /* XClientApp.swift in Sources */,
 				B568E1E329C1BB94002DC185 /* Vmess.swift in Sources */,
 				B50B3D0429C1B7D3000414AC /* VLESS.swift in Sources */,
+				B5C3E5FC29C46510007D708A /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

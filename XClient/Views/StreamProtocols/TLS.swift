@@ -22,8 +22,8 @@ struct TLS: View {
                     Text(fingerprint.name)
                 }
             }
-            .frame(width: 200)
         }
+        .frame(width: 300)
     }
 }
 

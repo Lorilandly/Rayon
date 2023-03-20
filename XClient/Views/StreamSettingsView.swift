@@ -30,6 +30,7 @@ struct StreamSettingsView: View {
                 networkView().padding(.horizontal).tabItem { Text("Network") }.tag(1)
                 securityView().padding(.horizontal).tabItem { Text("Security") }.tag(2)
             }
+            .tabViewStyle(.automatic)
             .frame(height: 120)
         }
     }
