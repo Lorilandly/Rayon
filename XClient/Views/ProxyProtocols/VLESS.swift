@@ -28,14 +28,19 @@ struct VLESS: View {
             HStack {
                 Text("Flow:")
                     .frame(width: leading_text_width, alignment: .trailing)
-                // this should use drop down
-                TextField("flow", text: $protocol_config.flow)
-                Text("Decryption:")
-                // this should use drop down
-                TextField("security", text: $protocol_config.encryption)
+                Picker("Flow:", selection: $protocol_config.flow) {
+                    ForEach(VlessFlow.allCases) { flow in
+                        Text(flow.rawValue)
+                    }
+                }
+                .labelsHidden()
+                Picker("Encryption:", selection: $protocol_config.encryption) {
+                    ForEach(VlessEncryption.allCases) { option in
+                        Text(option.rawValue)
+                    }
+                }
             }
         }
-        //.fixedSize(horizontal: false, vertical: true)
     }
 }
 

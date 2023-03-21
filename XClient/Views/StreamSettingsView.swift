@@ -19,7 +19,7 @@ struct StreamSettingsView: View {
                     ForEach(Network.allCases) {network in
                         Text(network.name)
                     }
-                }.frame(width: 140)
+                }.frame(width: 125)
                 Picker("Security", selection: $streamSettings.security) {
                     ForEach(Security.allCases) { security in
                         Text(security.name)

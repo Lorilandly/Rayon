@@ -91,12 +91,25 @@ struct VlessSettingsObject: ProxySettings {
     var address: String = ""
     var port: UInt16?
     var ID: String = ""
-    var encryption: String = ""
-    var flow: String = ""
+    var encryption: VlessEncryption = VlessEncryption.none
+    var flow: VlessFlow = VlessFlow.none
     
     mutating func unwrap() -> Self {
         self
     }
+}
+
+enum VlessFlow: String, CaseIterable, Identifiable {
+    case none
+    case xtls_rprx_vision
+    
+    var id: Self { self }
+}
+
+enum VlessEncryption: String, CaseIterable, Identifiable {
+    case none
+    
+    var id: Self { self }
 }
 
 struct VmessSettingsObject: ProxySettings {
