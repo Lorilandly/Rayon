@@ -17,6 +17,7 @@ struct VLESS: View {
                     .frame(width: leading_text_width, alignment: .trailing)
                 TextField("hostname, IPv4, or IPv6", text: $protocol_config.address)
                 Text(":")
+                // TODO: this overflows when the given number is too big
                 TextField("port", value: $protocol_config.port, format: .number)
                     .frame(width: 120)
             }

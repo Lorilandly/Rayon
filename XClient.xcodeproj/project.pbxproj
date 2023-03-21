@@ -24,6 +24,8 @@
 		B5C3E5FA29C46139007D708A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3E5F929C46139007D708A /* ContentView.swift */; };
 		B5C3E5FC29C46510007D708A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3E5FB29C46510007D708A /* SettingsView.swift */; };
 		B5C3E5FE29C82A36007D708A /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = B5C3E5FD29C82A36007D708A /* Credits.html */; };
+		B5C3E60029C94144007D708A /* ServerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3E5FF29C94144007D708A /* ServerListView.swift */; };
+		B5C3E60229C98289007D708A /* ServerSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3E60129C98289007D708A /* ServerSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		B5C3E5F929C46139007D708A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B5C3E5FB29C46510007D708A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B5C3E5FD29C82A36007D708A /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		B5C3E5FF29C94144007D708A /* ServerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListView.swift; sourceTree = "<group>"; };
+		B5C3E60129C98289007D708A /* ServerSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 			children = (
 				B5C3E5FD29C82A36007D708A /* Credits.html */,
 				B50B3CD729C1B779000414AC /* XClientApp.swift */,
+				B5C3E5FF29C94144007D708A /* ServerListView.swift */,
 				B5C9D4BE29C3134F00608F37 /* Views */,
 				B50B3CDB29C1B779000414AC /* Assets.xcassets */,
 				B50B3CE029C1B779000414AC /* XClient.entitlements */,
@@ -182,6 +187,7 @@
 			children = (
 				B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */,
 				B568E1EA29C2A710002DC185 /* StreamSettingsView.swift */,
+				B5C3E60129C98289007D708A /* ServerSettingsView.swift */,
 				B5C3E5F929C46139007D708A /* ContentView.swift */,
 				B50B3CD929C1B779000414AC /* ServerView.swift */,
 				B5C3E5FB29C46510007D708A /* SettingsView.swift */,
@@ -322,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C3E60029C94144007D708A /* ServerListView.swift in Sources */,
 				B568E1E129C1BB1C002DC185 /* ProxySettingsView.swift in Sources */,
 				B568E1E729C1CEB7002DC185 /* TCP.swift in Sources */,
 				B50B3CDA29C1B779000414AC /* ServerView.swift in Sources */,
@@ -332,6 +339,7 @@
 				B50B3CD829C1B779000414AC /* XClientApp.swift in Sources */,
 				B568E1E329C1BB94002DC185 /* Vmess.swift in Sources */,
 				B50B3D0429C1B7D3000414AC /* VLESS.swift in Sources */,
+				B5C3E60229C98289007D708A /* ServerSettingsView.swift in Sources */,
 				B5C3E5FC29C46510007D708A /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

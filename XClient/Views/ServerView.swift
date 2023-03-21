@@ -8,39 +8,30 @@
 import SwiftUI
 
 struct ServerView: View {
-    @State private var outbound = OutboundObject.Data()
+    @State private var serverList = outboundExample
+    // TODO: take this index from currently applied server
+    @State private var selectedServerIndex: Int? = 0
+    @State private var selectedServer = OutboundObject(tag: "", proxySettings: VlessSettingsObject(), streamSettings: StreamSettingsObject())
     var body: some View {
         HStack {
-            List(outboundExample, id: \.tag) { outboundObject in
-                Text(outboundObject.tag)
-            }
-            .navigationTitle("Servers:")
-            .listStyle(.bordered(alternatesRowBackgrounds: true))
-            .moveDisabled(false)
-            .frame(width: 100.0)
-            .padding()
-            //.toolbar()
-            //.environment(\.editMode, EditMode.active)
-            
-            
-            
-            VStack(spacing: 20) {
-                ProxySettingsView(proxyProtocol: $outbound.proxyProtocol, settings: $outbound.allProxySettings)
-                StreamSettingsView(streamSettings: $outbound.streamSettings)
-                HStack {
-                    Spacer()
-                    Button("Save") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                    }
-                    .buttonStyle(.borderedProminent)
-                    Button("Cancel") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                    }
-                    .buttonStyle(.bordered)
+            ServerListView(serverList: $serverList, selectedServerIndex: $selectedServerIndex)
+                .onChange(of: selectedServerIndex) { _ in
+                    updateSelected()
                 }
-            }
+            
+            ServerSettingsView(server: $selectedServer, serverData: selectedServer.data)
         }
         .padding()
+        .onAppear {
+            updateSelected()
+        }
+    }
+    func updateSelected() {
+        if let idx = selectedServerIndex {
+            selectedServer = serverList[idx]
+        } else {
+            selectedServer = OutboundObject(tag: "New Server", proxySettings: VlessSettingsObject(), streamSettings: StreamSettingsObject())
+        }
     }
 }
 

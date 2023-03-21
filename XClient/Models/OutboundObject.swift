@@ -25,11 +25,11 @@ struct OutboundObject {
 }
 
 var outboundExample: [OutboundObject] = [
-    OutboundObject(tag: "server1", proxySettings: VlessSettingsObject(), streamSettings: StreamSettingsObject()),
+    OutboundObject(tag: "server1", proxySettings: VlessSettingsObject(address: "hello.com", port: 1234, ID: "dachang", flow: VlessFlow.xtls_rprx_vision), streamSettings: StreamSettingsObject()),
     OutboundObject(tag: "server2", proxySettings: VmessSettingsObject(), streamSettings: StreamSettingsObject(security: Security.tls)),
 ]
 
-extension OutboundObject: Hashable {
+extension OutboundObject: Hashable, Identifiable {
     static func == (lhs: OutboundObject, rhs: OutboundObject) -> Bool {
         return lhs.tag == rhs.tag
     }
@@ -37,6 +37,8 @@ extension OutboundObject: Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(tag)
     }
+    
+    var id: String { tag }
     
     // the user edits Outbound.Data; Outbound gets updated only when "ok" is pressed
     struct Data {
@@ -59,6 +61,20 @@ extension OutboundObject: Hashable {
             break
         }
         return Data(tag: tag, sendThrough: sendThrough, proxyProtocol: proxySettings.proxyProtocol, allProxySettings: allProxySettings, streamSettings: streamSettings)
+    }
+    
+    mutating func update(from data: Data) {
+        tag = data.tag
+        sendThrough = data.sendThrough
+        streamSettings = data.streamSettings
+        switch data.proxyProtocol {
+        case .vless:
+            proxySettings = data.allProxySettings.vlessSettings as ProxySettings
+        case .vmess:
+            proxySettings = data.allProxySettings.vmessSettings
+        default:
+            break
+        }
     }
 }
 
