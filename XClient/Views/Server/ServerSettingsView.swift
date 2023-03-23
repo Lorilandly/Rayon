@@ -25,11 +25,7 @@ struct ServerSettingsView: View {
                 Spacer()
                 Button("Save") {
                     // when save is pressed, new object is generated instead of changing the original
-                    print(server.streamSettings.network)
-                    print(serverData.streamSettings.network)
                     server.update(from: serverData)
-                    print(server.streamSettings.network)
-                    print(serverData.streamSettings.network)
                 }
                 .buttonStyle(.borderedProminent)
                 Button("Cancel") {
@@ -39,20 +35,17 @@ struct ServerSettingsView: View {
                 .buttonStyle(.bordered)
             }
         }
-        /*
         .onChange(of: server) { newServer in
             //serverData = newServer.data
             flush()
         }
+        /*
         .onAppear{
             flush()
         }
          */
     }
     
-    func save(){
-        //server?.update(from: serverData)
-    }
     func flush(){
         serverData = server.data
     }

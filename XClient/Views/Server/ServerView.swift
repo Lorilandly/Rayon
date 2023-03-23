@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ServerView: View {
-    @State var serverList: [OutboundObject]
+    @StateObject private var store = Store()
+    @State var serverList: [OutboundObject] = outboundExample
     // TODO: take this index from currently applied server
     @State private var selectedServer: OutboundObject? = nil
     var body: some View {

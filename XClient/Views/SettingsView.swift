@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @StateObject private var store = Store()
     @State var tab = Tabs.server
     enum Tabs: Hashable {
         case general, server, routing, share
@@ -16,7 +15,7 @@ struct SettingsView: View {
     var body: some View {
         TabView(selection: $tab) {
             ContentView().tabItem{Label("General", systemImage: "gear")}.tag(Tabs.general)
-            ServerView(serverList: store.servers).tabItem{Label("Server", systemImage: "paperplane.circle")}.tag(Tabs.server)
+            ServerView().tabItem{Label("Server", systemImage: "paperplane.circle")}.tag(Tabs.server)
             RoutingView().tabItem{Label("Routing", systemImage: "point.topleft.down.curvedto.point.bottomright.up")}.tag(Tabs.routing)
         }
         .frame(width: 600)

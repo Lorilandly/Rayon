@@ -8,16 +8,7 @@
 import Foundation
 import Network
 
-/*
-outbound
-    sendthrough
-    tag
-    proxy protocol
-    proxy setting
-    stream setting
-*/
-
-struct OutboundObject {
+struct OutboundObject: Identifiable, Hashable {
     let id = UUID()
     var tag: String
     var sendThrough: IPv4Address?
@@ -30,13 +21,15 @@ var outboundExample: [OutboundObject] = [
     OutboundObject(tag: "server2", proxySettings: VmessSettingsObject(), streamSettings: StreamSettingsObject(security: Security.tls)),
 ]
 
-extension OutboundObject: Identifiable, Hashable {
+extension OutboundObject {
     // hashable is the criminal!!!
-    // when hashable is configured, this function is used to check if the struct is altered.
+    // when hashable is configured, equatable checks if the struct is altered.
+    // previously, equitable only checks the tag
     static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.tag == rhs.tag && lhs.id == rhs.id && lhs.sendThrough == rhs.sendThrough && lhs.streamSettings == rhs.streamSettings
     }
     
+    // hashable probably isn't working right currently
     func hash(into hasher: inout Hasher) {
         hasher.combine(tag)
     }
