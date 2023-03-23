@@ -16,7 +16,7 @@ struct StreamSettingsView: View {
                 Text("Stream Settings").font(.headline)
                 Spacer()
                 Picker("Network", selection: $streamSettings.network) {
-                    ForEach(Network.allCases) {network in
+                    ForEach(StreamNetwork.allCases) {network in
                         Text(network.name)
                     }
                 }.frame(width: 125)

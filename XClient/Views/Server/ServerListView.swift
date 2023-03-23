@@ -9,16 +9,14 @@ import SwiftUI
 
 struct ServerListView: View {
     @Binding var serverList: [OutboundObject]
-    @Binding var selectedServerIndex: Int?
+    @Binding var selectedServer: OutboundObject?
+    //@Binding var selectedServerIndex: Int?
     
     var body: some View {
         VStack{
-            List(selection: $selectedServerIndex) {
-                ForEach(serverList.indices, id: \.self) { index in
-                    Text(serverList[index].tag)
-                        .onTapGesture {
-                            selectedServerIndex = index
-                        }
+            List(selection: $selectedServer) {
+                ForEach($serverList, id: \.self) { $selected in
+                    Text(selected.tag)
                 }
                 .onDelete(perform: deleteRow)
                 .onMove(perform: moveRows)
@@ -44,12 +42,14 @@ struct ServerListView: View {
     }
     
     func addRow() {
-        serverList.append(OutboundObject(tag: "new", proxySettings: VlessSettingsObject(), streamSettings: StreamSettingsObject()))
+        let newServer = OutboundObject(tag: "new", proxySettings: VlessSettingsObject(), streamSettings: StreamSettingsObject())
+        selectedServer = newServer
+        serverList.append(newServer)
     }
     
     func duplicateRow() {
-        if let idx = selectedServerIndex {
-            serverList.append(serverList[idx])
+        if let server = selectedServer {
+            serverList.append(server)
         }
     }
     
@@ -64,8 +64,9 @@ struct ServerListView: View {
 }
 
 
-struct TestView_Previews: PreviewProvider {
+struct ServerListView_Previews: PreviewProvider {
     static var previews: some View {
-        ServerListView(serverList: .constant(outboundExample), selectedServerIndex: .constant(0))
+        //ServerListView(serverList: .constant(outboundExample), selectedServerIndex: .constant(0))
+        ServerListView(serverList: .constant(outboundExample), selectedServer: .constant(outboundExample[0]))
     }
 }

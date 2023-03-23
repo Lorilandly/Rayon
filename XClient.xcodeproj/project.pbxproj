@@ -15,6 +15,7 @@
 		B50B3CF429C1B77A000414AC /* XClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3CF329C1B77A000414AC /* XClientUITests.swift */; };
 		B50B3CF629C1B77A000414AC /* XClientUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3CF529C1B77A000414AC /* XClientUITestsLaunchTests.swift */; };
 		B50B3D0429C1B7D3000414AC /* VLESS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3D0329C1B7D3000414AC /* VLESS.swift */; };
+		B5673ACC29CAA8CD00B26B19 /* RoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673ACB29CAA8CD00B26B19 /* RoutingView.swift */; };
 		B568E1E129C1BB1C002DC185 /* ProxySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */; };
 		B568E1E329C1BB94002DC185 /* Vmess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E229C1BB94002DC185 /* Vmess.swift */; };
 		B568E1E729C1CEB7002DC185 /* TCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E629C1CEB7002DC185 /* TCP.swift */; };
@@ -26,6 +27,8 @@
 		B5C3E5FE29C82A36007D708A /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = B5C3E5FD29C82A36007D708A /* Credits.html */; };
 		B5C3E60029C94144007D708A /* ServerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3E5FF29C94144007D708A /* ServerListView.swift */; };
 		B5C3E60229C98289007D708A /* ServerSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3E60129C98289007D708A /* ServerSettingsView.swift */; };
+		B5C3E60629C9C04F007D708A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3E60529C9C04F007D708A /* Store.swift */; };
+		B5C3E60829C9EB25007D708A /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3E60729C9EB25007D708A /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,7 @@
 		B50B3CF329C1B77A000414AC /* XClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XClientUITests.swift; sourceTree = "<group>"; };
 		B50B3CF529C1B77A000414AC /* XClientUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XClientUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B50B3D0329C1B7D3000414AC /* VLESS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLESS.swift; sourceTree = "<group>"; };
+		B5673ACB29CAA8CD00B26B19 /* RoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingView.swift; sourceTree = "<group>"; };
 		B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxySettingsView.swift; sourceTree = "<group>"; };
 		B568E1E229C1BB94002DC185 /* Vmess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vmess.swift; sourceTree = "<group>"; };
 		B568E1E629C1CEB7002DC185 /* TCP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCP.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 		B5C3E5FD29C82A36007D708A /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		B5C3E5FF29C94144007D708A /* ServerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListView.swift; sourceTree = "<group>"; };
 		B5C3E60129C98289007D708A /* ServerSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSettingsView.swift; sourceTree = "<group>"; };
+		B5C3E60529C9C04F007D708A /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		B5C3E60729C9EB25007D708A /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +127,7 @@
 			children = (
 				B5C3E5FD29C82A36007D708A /* Credits.html */,
 				B50B3CD729C1B779000414AC /* XClientApp.swift */,
-				B5C3E5FF29C94144007D708A /* ServerListView.swift */,
+				B5C3E60729C9EB25007D708A /* TestView.swift */,
 				B5C9D4BE29C3134F00608F37 /* Views */,
 				B50B3CDB29C1B779000414AC /* Assets.xcassets */,
 				B50B3CE029C1B779000414AC /* XClient.entitlements */,
@@ -165,10 +171,23 @@
 			path = ProxyProtocols;
 			sourceTree = "<group>";
 		};
+		B5673ACA29CAA7BC00B26B19 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				B50B3CD929C1B779000414AC /* ServerView.swift */,
+				B5C3E5FF29C94144007D708A /* ServerListView.swift */,
+				B5C3E60129C98289007D708A /* ServerSettingsView.swift */,
+				B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */,
+				B568E1EA29C2A710002DC185 /* StreamSettingsView.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
 		B568E1E429C1BBCA002DC185 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				B568E1EC29C2C201002DC185 /* OutboundObject.swift */,
+				B5C3E60529C9C04F007D708A /* Store.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,12 +204,10 @@
 		B5C9D4BE29C3134F00608F37 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */,
-				B568E1EA29C2A710002DC185 /* StreamSettingsView.swift */,
-				B5C3E60129C98289007D708A /* ServerSettingsView.swift */,
 				B5C3E5F929C46139007D708A /* ContentView.swift */,
-				B50B3CD929C1B779000414AC /* ServerView.swift */,
 				B5C3E5FB29C46510007D708A /* SettingsView.swift */,
+				B5673ACB29CAA8CD00B26B19 /* RoutingView.swift */,
+				B5673ACA29CAA7BC00B26B19 /* Server */,
 				B568E1E529C1CCBB002DC185 /* StreamProtocols */,
 				B50B3D0229C1B7BD000414AC /* ProxyProtocols */,
 			);
@@ -328,13 +345,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5673ACC29CAA8CD00B26B19 /* RoutingView.swift in Sources */,
 				B5C3E60029C94144007D708A /* ServerListView.swift in Sources */,
 				B568E1E129C1BB1C002DC185 /* ProxySettingsView.swift in Sources */,
 				B568E1E729C1CEB7002DC185 /* TCP.swift in Sources */,
 				B50B3CDA29C1B779000414AC /* ServerView.swift in Sources */,
 				B568E1ED29C2C201002DC185 /* OutboundObject.swift in Sources */,
 				B568E1E929C2A394002DC185 /* TLS.swift in Sources */,
+				B5C3E60829C9EB25007D708A /* TestView.swift in Sources */,
 				B568E1EB29C2A710002DC185 /* StreamSettingsView.swift in Sources */,
+				B5C3E60629C9C04F007D708A /* Store.swift in Sources */,
 				B5C3E5FA29C46139007D708A /* ContentView.swift in Sources */,
 				B50B3CD829C1B779000414AC /* XClientApp.swift in Sources */,
 				B568E1E329C1BB94002DC185 /* Vmess.swift in Sources */,

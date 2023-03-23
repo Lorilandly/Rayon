@@ -8,24 +8,28 @@
 import SwiftUI
 
 struct ServerView: View {
-    @State private var serverList = outboundExample
+    @State var serverList: [OutboundObject]
     // TODO: take this index from currently applied server
-    @State private var selectedServerIndex: Int? = 0
-    @State private var selectedServer = OutboundObject(tag: "", proxySettings: VlessSettingsObject(), streamSettings: StreamSettingsObject())
+    @State private var selectedServer: OutboundObject? = nil
     var body: some View {
         HStack {
-            ServerListView(serverList: $serverList, selectedServerIndex: $selectedServerIndex)
-                .onChange(of: selectedServerIndex) { _ in
-                    updateSelected()
-                }
+            ServerListView(serverList: $serverList, selectedServer: $selectedServer)
             
-            ServerSettingsView(server: $selectedServer, serverData: selectedServer.data)
+            //ServerSettingsView(server: $selectedServer)
+            
+            if let server = Binding<OutboundObject>($selectedServer) {
+                ServerSettingsView(server: server)
+            } else {
+                //ServerSettingsView(server: Binding(outboundExample[0]))
+                Text("select a server")
+            }
         }
         .padding()
         .onAppear {
-            updateSelected()
+            //updateSelected()
         }
     }
+    /*
     func updateSelected() {
         if let idx = selectedServerIndex {
             selectedServer = serverList[idx]
@@ -33,10 +37,11 @@ struct ServerView: View {
             selectedServer = OutboundObject(tag: "New Server", proxySettings: VlessSettingsObject(), streamSettings: StreamSettingsObject())
         }
     }
+     */
 }
 
 struct ServerView_Previews: PreviewProvider {
     static var previews: some View {
-        ServerView()
+        ServerView(serverList: outboundExample)
     }
 }

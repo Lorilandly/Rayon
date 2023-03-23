@@ -18,9 +18,10 @@ outbound
 */
 
 struct OutboundObject {
+    let id = UUID()
     var tag: String
-    var sendThrough: IPAddress?
-    var proxySettings: ProxySettings
+    var sendThrough: IPv4Address?
+    var proxySettings: any ProxySettings
     var streamSettings: StreamSettingsObject
 }
 
@@ -29,21 +30,22 @@ var outboundExample: [OutboundObject] = [
     OutboundObject(tag: "server2", proxySettings: VmessSettingsObject(), streamSettings: StreamSettingsObject(security: Security.tls)),
 ]
 
-extension OutboundObject: Hashable, Identifiable {
-    static func == (lhs: OutboundObject, rhs: OutboundObject) -> Bool {
-        return lhs.tag == rhs.tag
+extension OutboundObject: Identifiable, Hashable {
+    // hashable is the criminal!!!
+    // when hashable is configured, this function is used to check if the struct is altered.
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.tag == rhs.tag && lhs.id == rhs.id && lhs.sendThrough == rhs.sendThrough && lhs.streamSettings == rhs.streamSettings
     }
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(tag)
     }
     
-    var id: String { tag }
-    
+    //var id: Self { self }
     // the user edits Outbound.Data; Outbound gets updated only when "ok" is pressed
-    struct Data {
+    struct Data: Hashable {
         var tag: String = "New Server"
-        var sendThrough: IPAddress? = IPv4Address("0.0.0.0")
+        var sendThrough: IPv4Address? = IPv4Address("0.0.0.0")
         var proxyProtocol: Proxy = Proxy.vless
         var allProxySettings: AllProxySettings = AllProxySettings()
         var streamSettings: StreamSettingsObject = StreamSettingsObject()
@@ -66,19 +68,19 @@ extension OutboundObject: Hashable, Identifiable {
     mutating func update(from data: Data) {
         tag = data.tag
         sendThrough = data.sendThrough
-        streamSettings = data.streamSettings
         switch data.proxyProtocol {
         case .vless:
-            proxySettings = data.allProxySettings.vlessSettings as ProxySettings
+            proxySettings = data.allProxySettings.vlessSettings
         case .vmess:
             proxySettings = data.allProxySettings.vmessSettings
         default:
             break
         }
+        streamSettings = data.streamSettings
     }
 }
 
-enum Proxy: String, CaseIterable, Identifiable {
+enum Proxy: String, CaseIterable, Identifiable, Hashable {
     case vless
     case vmess
     case trojan
@@ -91,13 +93,12 @@ enum Proxy: String, CaseIterable, Identifiable {
 }
 
 // only store the used protocol
-protocol ProxySettings {
+protocol ProxySettings: Hashable {
     var proxyProtocol: Proxy {get}
-    mutating func unwrap() -> Self
 }
 
 // store all the protocol settings
-struct AllProxySettings {
+struct AllProxySettings: Hashable {
     var vlessSettings: VlessSettingsObject = VlessSettingsObject()
     var vmessSettings: VmessSettingsObject = VmessSettingsObject()
 }
@@ -110,9 +111,6 @@ struct VlessSettingsObject: ProxySettings {
     var encryption: VlessEncryption = VlessEncryption.none
     var flow: VlessFlow = VlessFlow.none
     
-    mutating func unwrap() -> Self {
-        self
-    }
 }
 
 enum VlessFlow: String, CaseIterable, Identifiable {
@@ -134,14 +132,10 @@ struct VmessSettingsObject: ProxySettings {
     var port: UInt16?
     var ID = String()
     var alterid = String()
-    
-    mutating func unwrap() -> Self {
-        self
-    }
 }
 
-struct StreamSettingsObject {
-    var network: Network = Network.tcp
+struct StreamSettingsObject: Hashable {
+    var network: StreamNetwork = StreamNetwork.tcp
     var tcpSettings: TcpObject = TcpObject()
     // add more settings
     
@@ -150,7 +144,7 @@ struct StreamSettingsObject {
     // add more settings
 }
 
-enum Network: String, CaseIterable, Identifiable {
+enum StreamNetwork: String, CaseIterable, Identifiable {
     case tcp
     case kcp
     case ws
@@ -165,7 +159,7 @@ enum Network: String, CaseIterable, Identifiable {
     }
 }
 
-struct TcpObject {
+struct TcpObject: Hashable {
     var http: Bool = false
     var host: String = ""
     var path: String = ""
@@ -182,7 +176,7 @@ enum Security: String, CaseIterable, Identifiable {
     }
 }
 
-struct TlsObject {
+struct TlsObject: Hashable {
     var allowInsecure: Bool = false
     var disableSystemRoot: Bool = false
     var fingerprint: TlsFingerprint = TlsFingerprint.none
