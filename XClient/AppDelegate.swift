@@ -52,12 +52,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         private func createMenu() {
             if let statusBarButton = statusItem.button {
                 statusBarButton.image = NSImage(
-                    systemSymbolName: "paperplane.circle",
+                    systemSymbolName: "paperplane",
                     accessibilityDescription: "an app"
                 )
                 
-                let groupMenuItem = NSMenuItem()
-                groupMenuItem.title = "Group"
+                let serverMenuGroup = NSMenuItem()
+                serverMenuGroup.title = "Servers"
                 
                 let groupDetailsMenuItem = NSMenuItem()
                 groupDetailsMenuItem.view = mainView
@@ -65,8 +65,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 let groupSubmenu = NSMenu()
                 groupSubmenu.addItem(groupDetailsMenuItem)
                 
-                let secondMenuItem = NSMenuItem()
-                secondMenuItem.title = "Another item"
+                let routingMenuGroup = NSMenuItem()
+                routingMenuGroup.title = "Routings"
                 
                 let secondSubMenuItem = NSMenuItem()
                 secondSubMenuItem.title = "SubItem"
@@ -76,17 +76,23 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 let secondSubMenu = NSMenu()
                 secondSubMenu.addItem(secondSubMenuItem)
                 
-                let rootItem = NSMenuItem()
-                rootItem.title = "Preferences..."
-                rootItem.target = self
-                rootItem.action = #selector(Self.rootAction(_:))
+                let preferenceItem = NSMenuItem()
+                preferenceItem.title = "Preferences..."
+                preferenceItem.target = self
+                preferenceItem.action = #selector(Self.preferenceAction(_:))
+                
+                let quitItem = NSMenuItem()
+                quitItem.title = "Quit"
+                quitItem.target = self
+                quitItem.action = #selector(Self.quitAction(_:))
                 
                 let mainMenu = NSMenu()
-                mainMenu.addItem(groupMenuItem)
-                mainMenu.setSubmenu(groupSubmenu, for: groupMenuItem)
-                mainMenu.addItem(secondMenuItem)
-                mainMenu.setSubmenu(secondSubMenu, for: secondMenuItem)
-                mainMenu.addItem(rootItem)
+                mainMenu.addItem(serverMenuGroup)
+                mainMenu.setSubmenu(groupSubmenu, for: serverMenuGroup)
+                mainMenu.addItem(routingMenuGroup)
+                mainMenu.setSubmenu(secondSubMenu, for: routingMenuGroup)
+                mainMenu.addItem(preferenceItem)
+                mainMenu.addItem(quitItem)
                 
                 statusItem.menu = mainMenu
             }
@@ -98,8 +104,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             print("Hi from action")
         }
         
-        @objc private func rootAction(_ sender: Any?) {
-            NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+        @objc private func preferenceAction(_ sender: Any?) {
+            if #available(macOS 13, *) {
+                NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+            } else {
+                NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+            }
+        }
+        @objc private func quitAction(_ sender: Any?) {
+            NSApp.terminate(nil)
         }
     }
     
@@ -107,5 +120,37 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         menuExtrasConfigurator = .init()
+            
+        /*
+         * TODO:
+         * desired behavior: show app icon when any window is showed.
+         * issue: app icon can't be hidden when windows are closed.
+         * current solution: just make window show up on top, do not do anything else.
+        let settingsView = SettingsView()
+        let window = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
+            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+            backing: .buffered, defer: false)
+        window.contentView = NSHostingView(rootView: settingsView)
+        window.delegate = settingsView.settingsWindowDelegate
+        window.center()
+        window.setFrameAutosaveName("Main Window")
+        window.makeKeyAndOrderFront(nil)
+         */
     }
+}
+
+extension NSApplication {
+    
+    static func show(ignoringOtherApps: Bool = true) {
+        //NSApp.setActivationPolicy(.regular)
+        NSApp.activate(ignoringOtherApps: ignoringOtherApps)
+    }
+    
+    /*
+    static func hide() {
+        NSApp.hide(self)
+        NSApp.setActivationPolicy(.accessory)
+    }
+     */
 }

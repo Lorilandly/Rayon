@@ -12,6 +12,8 @@ struct RoutingView: View {
     // @State selectedRoute
     var body: some View {
         HStack {
+            Button("hello") {
+            }
             // routing rules list
             // routing rule setting
         }

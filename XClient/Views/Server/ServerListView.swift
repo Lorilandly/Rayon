@@ -15,26 +15,32 @@ struct ServerListView: View {
     var body: some View {
         VStack{
             List(selection: $selectedServer) {
-                ForEach($serverList, id: \.self) { $selected in
+                ForEach($serverList) { $selected in
                     Text(selected.tag)
+                        .tag(selected)
                 }
                 .onDelete(perform: deleteRow)
                 .onMove(perform: moveRows)
                 // TODO: implement drag & drop
                 //.onInsert(of: <#T##[UTType]#>, perform: <#T##(Int, [NSItemProvider]) -> Void#>)
+                
+                // fix this on the bottom row
+                //Button("somebutton") {Image(systemName: "plus")}
             }
             .listStyle(.bordered(alternatesRowBackgrounds: true))
-            HStack {
-                Button(action: addRow) {
-                    Image(systemName: "plus")
-                }
-                //Button(action: deleteRow) {
+            .safeAreaInset(edge: .bottom) {
+                HStack {
+                    Button(action: addRow) {
+                        Image(systemName: "plus")
+                    }
+                    //Button(action: deleteRow) {
                     //Image(systemName: "minus")
-                //}
-                Button(action: duplicateRow) {
-                    Image(systemName: "square.on.square")
+                    //}
+                    Button(action: duplicateRow) {
+                        Image(systemName: "square.on.square")
+                    }
+                    Spacer()
                 }
-                Spacer()
             }
         }
         .frame(width: 100.0)
