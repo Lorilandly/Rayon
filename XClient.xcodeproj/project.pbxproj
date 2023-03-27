@@ -17,6 +17,7 @@
 		B50B3D0429C1B7D3000414AC /* VLESS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3D0329C1B7D3000414AC /* VLESS.swift */; };
 		B5673ACC29CAA8CD00B26B19 /* RoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673ACB29CAA8CD00B26B19 /* RoutingView.swift */; };
 		B5673AD029CC262D00B26B19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673ACF29CC262D00B26B19 /* AppDelegate.swift */; };
+		B5673B2729CD9F2100B26B19 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673B2629CD9F2100B26B19 /* GeneralView.swift */; };
 		B568E1E129C1BB1C002DC185 /* ProxySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */; };
 		B568E1E329C1BB94002DC185 /* Vmess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E229C1BB94002DC185 /* Vmess.swift */; };
 		B568E1E729C1CEB7002DC185 /* TCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E629C1CEB7002DC185 /* TCP.swift */; };
@@ -64,6 +65,7 @@
 		B50B3D0329C1B7D3000414AC /* VLESS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLESS.swift; sourceTree = "<group>"; };
 		B5673ACB29CAA8CD00B26B19 /* RoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingView.swift; sourceTree = "<group>"; };
 		B5673ACF29CC262D00B26B19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B5673B2629CD9F2100B26B19 /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxySettingsView.swift; sourceTree = "<group>"; };
 		B568E1E229C1BB94002DC185 /* Vmess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vmess.swift; sourceTree = "<group>"; };
 		B568E1E629C1CEB7002DC185 /* TCP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCP.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			children = (
 				B5C3E5F929C46139007D708A /* ContentView.swift */,
 				B5C3E5FB29C46510007D708A /* SettingsView.swift */,
+				B5673B2629CD9F2100B26B19 /* GeneralView.swift */,
 				B5673ACB29CAA8CD00B26B19 /* RoutingView.swift */,
 				B5673ACA29CAA7BC00B26B19 /* Server */,
 				B568E1E529C1CCBB002DC185 /* StreamProtocols */,
@@ -363,6 +366,7 @@
 				B568E1E329C1BB94002DC185 /* Vmess.swift in Sources */,
 				B50B3D0429C1B7D3000414AC /* VLESS.swift in Sources */,
 				B5C3E60229C98289007D708A /* ServerSettingsView.swift in Sources */,
+				B5673B2729CD9F2100B26B19 /* GeneralView.swift in Sources */,
 				B5673AD029CC262D00B26B19 /* AppDelegate.swift in Sources */,
 				B5C3E5FC29C46510007D708A /* SettingsView.swift in Sources */,
 			);

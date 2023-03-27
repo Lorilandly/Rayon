@@ -14,7 +14,7 @@ struct SettingsView: View {
     }
     var body: some View {
         TabView(selection: $tab) {
-            ContentView().tabItem{Label("General", systemImage: "gear")}.tag(Tabs.general)
+            GeneralView().tabItem{Label("General", systemImage: "gear")}.tag(Tabs.general)
             ServerView().tabItem{Label("Server", systemImage: "paperplane.circle")}.tag(Tabs.server)
             RoutingView().tabItem{Label("Routing", systemImage: "point.topleft.down.curvedto.point.bottomright.up")}.tag(Tabs.routing)
         }

@@ -39,8 +39,13 @@ struct ServerListView: View {
                     Button(action: duplicateRow) {
                         Image(systemName: "square.on.square")
                     }
+                    .disabled(selectedServer == nil)
                     Spacer()
                 }
+                .buttonStyle(.plain)
+                .padding(5)
+                .background(.background)
+                .border(.tertiary)
             }
         }
         .frame(width: 100.0)
