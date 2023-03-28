@@ -11,34 +11,22 @@ struct ServerView: View {
     @StateObject private var store = Store()
     @State var serverList: [OutboundObject] = outboundExample
     // TODO: take this index from currently applied server
-    @State private var selectedServer: OutboundObject? = nil
+    @State private var selectedIndex: Int? = nil
     var body: some View {
-        HStack {
-            ServerListView(serverList: $serverList, selectedServer: $selectedServer)
+        HStack(spacing: 20) {
+            ServerListView(serverList: $serverList, selectedIndex: $selectedIndex)
+        .frame(minHeight: 200)
             
-            //ServerSettingsView(server: $selectedServer)
-            
-            if let server = Binding<OutboundObject>($selectedServer) {
-                ServerSettingsView(server: server)
+            if selectedIndex != nil {
+                ServerSettingsView(server: $serverList[selectedIndex!])
             } else {
-                //ServerSettingsView(server: Binding(outboundExample[0]))
+                Spacer()
                 Text("select a server")
+                Spacer()
             }
         }
         .padding()
-        .onAppear {
-            //updateSelected()
-        }
     }
-    /*
-    func updateSelected() {
-        if let idx = selectedServerIndex {
-            selectedServer = serverList[idx]
-        } else {
-            selectedServer = OutboundObject(tag: "New Server", proxySettings: VlessSettingsObject(), streamSettings: StreamSettingsObject())
-        }
-    }
-     */
 }
 
 struct ServerView_Previews: PreviewProvider {

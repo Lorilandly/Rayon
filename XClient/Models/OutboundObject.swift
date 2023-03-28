@@ -17,8 +17,9 @@ struct OutboundObject: Identifiable, Hashable {
 }
 
 var outboundExample: [OutboundObject] = [
-    OutboundObject(tag: "server1", proxySettings: VlessSettingsObject(address: "hello.com", port: 1234, ID: "dachang", flow: VlessFlow.xtls_rprx_vision), streamSettings: StreamSettingsObject()),
-    OutboundObject(tag: "server2", proxySettings: VmessSettingsObject(), streamSettings: StreamSettingsObject(security: Security.tls)),
+    OutboundObject(tag: "server0", proxySettings: VlessSettingsObject(address: "hello.com", port: 1234, ID: "dachang", flow: VlessFlow.xtls_rprx_vision), streamSettings: StreamSettingsObject()),
+    OutboundObject(tag: "server1", proxySettings: VmessSettingsObject(), streamSettings: StreamSettingsObject(security: Security.tls)),
+    OutboundObject(tag: "server2", proxySettings: VmessSettingsObject(), streamSettings: StreamSettingsObject(network: StreamNetwork.ws, security: Security.tls)),
 ]
 
 extension OutboundObject {

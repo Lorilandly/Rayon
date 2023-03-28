@@ -15,7 +15,7 @@ struct GeneralView: View {
         var id: Self { self }
         
         case simple
-        case complex
+        case advanced
     }
     
     var body: some View {

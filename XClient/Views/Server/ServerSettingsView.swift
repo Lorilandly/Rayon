@@ -26,28 +26,18 @@ struct ServerSettingsView: View {
                 Button("Save") {
                     // when save is pressed, new object is generated instead of changing the original
                     server.update(from: serverData)
+                    // restart xray
                 }
                 .buttonStyle(.borderedProminent)
                 Button("Cancel") {
-                    //serverData = server.data
-                    flush()
+                    serverData = server.data
                 }
                 .buttonStyle(.bordered)
             }
         }
         .onChange(of: server) { newServer in
-            //serverData = newServer.data
-            flush()
+            serverData = newServer.data
         }
-        /*
-        .onAppear{
-            flush()
-        }
-         */
-    }
-    
-    func flush(){
-        serverData = server.data
     }
 }
 
