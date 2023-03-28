@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  XClient
+
+  Created by 李浩安 on 2023/3/28.
+  
+*/
+
+"General" = "通用";
+"Mode:" = "模式：";
+"simple" = "简单";
+"advanced" = "高级";
+
+"Server" = "服务器";
+"Servers" = "服务器";
+"Save" = "保存";
+"Cancel" = "取消";
+
+"Routing" = "路由";
+"Block" = "阻止";
+"Direct" = "直连";
+"Proxy" = "代理";

@@ -18,13 +18,15 @@
 		B5673ACC29CAA8CD00B26B19 /* RoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673ACB29CAA8CD00B26B19 /* RoutingView.swift */; };
 		B5673AD029CC262D00B26B19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673ACF29CC262D00B26B19 /* AppDelegate.swift */; };
 		B5673B2729CD9F2100B26B19 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673B2629CD9F2100B26B19 /* GeneralView.swift */; };
+		B5673B2A29D29BB300B26B19 /* RoutingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673B2929D29BB300B26B19 /* RoutingListView.swift */; };
+		B5673B2C29D2B41900B26B19 /* RoutingSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673B2B29D2B41900B26B19 /* RoutingSettingsView.swift */; };
+		B5673B2F29D2C0C500B26B19 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5673B3129D2C0C500B26B19 /* Localizable.strings */; };
 		B568E1E129C1BB1C002DC185 /* ProxySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */; };
 		B568E1E329C1BB94002DC185 /* Vmess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E229C1BB94002DC185 /* Vmess.swift */; };
 		B568E1E729C1CEB7002DC185 /* TCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E629C1CEB7002DC185 /* TCP.swift */; };
 		B568E1E929C2A394002DC185 /* TLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E829C2A394002DC185 /* TLS.swift */; };
 		B568E1EB29C2A710002DC185 /* StreamSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1EA29C2A710002DC185 /* StreamSettingsView.swift */; };
 		B568E1ED29C2C201002DC185 /* OutboundObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1EC29C2C201002DC185 /* OutboundObject.swift */; };
-		B5C3E5FA29C46139007D708A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3E5F929C46139007D708A /* ContentView.swift */; };
 		B5C3E5FC29C46510007D708A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3E5FB29C46510007D708A /* SettingsView.swift */; };
 		B5C3E5FE29C82A36007D708A /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = B5C3E5FD29C82A36007D708A /* Credits.html */; };
 		B5C3E60029C94144007D708A /* ServerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3E5FF29C94144007D708A /* ServerListView.swift */; };
@@ -66,13 +68,16 @@
 		B5673ACB29CAA8CD00B26B19 /* RoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingView.swift; sourceTree = "<group>"; };
 		B5673ACF29CC262D00B26B19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5673B2629CD9F2100B26B19 /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
+		B5673B2929D29BB300B26B19 /* RoutingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingListView.swift; sourceTree = "<group>"; };
+		B5673B2B29D2B41900B26B19 /* RoutingSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingSettingsView.swift; sourceTree = "<group>"; };
+		B5673B3029D2C0C500B26B19 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B5673B3229D2C11200B26B19 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxySettingsView.swift; sourceTree = "<group>"; };
 		B568E1E229C1BB94002DC185 /* Vmess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vmess.swift; sourceTree = "<group>"; };
 		B568E1E629C1CEB7002DC185 /* TCP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCP.swift; sourceTree = "<group>"; };
 		B568E1E829C2A394002DC185 /* TLS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLS.swift; sourceTree = "<group>"; };
 		B568E1EA29C2A710002DC185 /* StreamSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamSettingsView.swift; sourceTree = "<group>"; };
 		B568E1EC29C2C201002DC185 /* OutboundObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutboundObject.swift; sourceTree = "<group>"; };
-		B5C3E5F929C46139007D708A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B5C3E5FB29C46510007D708A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B5C3E5FD29C82A36007D708A /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		B5C3E5FF29C94144007D708A /* ServerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListView.swift; sourceTree = "<group>"; };
@@ -109,6 +114,7 @@
 		B50B3CCB29C1B779000414AC = {
 			isa = PBXGroup;
 			children = (
+				B5673B3129D2C0C500B26B19 /* Localizable.strings */,
 				B50B3CD629C1B779000414AC /* XClient */,
 				B50B3CE829C1B77A000414AC /* XClientTests */,
 				B50B3CF229C1B77A000414AC /* XClientUITests */,
@@ -188,6 +194,16 @@
 			path = Server;
 			sourceTree = "<group>";
 		};
+		B5673B2829D29B9A00B26B19 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				B5673ACB29CAA8CD00B26B19 /* RoutingView.swift */,
+				B5673B2B29D2B41900B26B19 /* RoutingSettingsView.swift */,
+				B5673B2929D29BB300B26B19 /* RoutingListView.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
 		B568E1E429C1BBCA002DC185 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,11 +225,10 @@
 		B5C9D4BE29C3134F00608F37 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B5C3E5F929C46139007D708A /* ContentView.swift */,
 				B5C3E5FB29C46510007D708A /* SettingsView.swift */,
 				B5673B2629CD9F2100B26B19 /* GeneralView.swift */,
-				B5673ACB29CAA8CD00B26B19 /* RoutingView.swift */,
 				B5673ACA29CAA7BC00B26B19 /* Server */,
+				B5673B2829D29B9A00B26B19 /* Routing */,
 				B568E1E529C1CCBB002DC185 /* StreamProtocols */,
 				B50B3D0229C1B7BD000414AC /* ProxyProtocols */,
 			);
@@ -306,6 +321,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = B50B3CCB29C1B779000414AC;
 			productRefGroup = B50B3CD529C1B779000414AC /* Products */;
@@ -325,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B50B3CDF29C1B779000414AC /* Preview Assets.xcassets in Resources */,
+				B5673B2F29D2C0C500B26B19 /* Localizable.strings in Resources */,
 				B5C3E5FE29C82A36007D708A /* Credits.html in Resources */,
 				B50B3CDC29C1B779000414AC /* Assets.xcassets in Resources */,
 			);
@@ -356,12 +373,13 @@
 				B568E1E129C1BB1C002DC185 /* ProxySettingsView.swift in Sources */,
 				B568E1E729C1CEB7002DC185 /* TCP.swift in Sources */,
 				B50B3CDA29C1B779000414AC /* ServerView.swift in Sources */,
+				B5673B2C29D2B41900B26B19 /* RoutingSettingsView.swift in Sources */,
 				B568E1ED29C2C201002DC185 /* OutboundObject.swift in Sources */,
 				B568E1E929C2A394002DC185 /* TLS.swift in Sources */,
 				B5C3E60829C9EB25007D708A /* TestView.swift in Sources */,
 				B568E1EB29C2A710002DC185 /* StreamSettingsView.swift in Sources */,
+				B5673B2A29D29BB300B26B19 /* RoutingListView.swift in Sources */,
 				B5C3E60629C9C04F007D708A /* Store.swift in Sources */,
-				B5C3E5FA29C46139007D708A /* ContentView.swift in Sources */,
 				B50B3CD829C1B779000414AC /* XClientApp.swift in Sources */,
 				B568E1E329C1BB94002DC185 /* Vmess.swift in Sources */,
 				B50B3D0429C1B7D3000414AC /* VLESS.swift in Sources */,
@@ -404,11 +422,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		B5673B3129D2C0C500B26B19 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5673B3029D2C0C500B26B19 /* en */,
+				B5673B3229D2C11200B26B19 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		B50B3CF729C1B77A000414AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -469,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
