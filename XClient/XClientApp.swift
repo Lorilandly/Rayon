@@ -9,7 +9,7 @@
 /*
  * Current issues:
  * 1. outbound object needs to implement equatable properly. currently `any` is stopping this
- * 2. unselecting row in list causes immediate crash
+ * 2. unselecting row in list causes immediate crash -> ok
  * 3. pressing save unselects row, and saving is not updated to the row
  * 4. when preference is pressed in the menu, preference pane appear in background -> WIP
  *
@@ -36,7 +36,6 @@ struct XClientApp: App {
         Settings {
             SettingsView()
                 .onAppear {
-                    print("appear")
                     NSApplication.show()
                 }
         }

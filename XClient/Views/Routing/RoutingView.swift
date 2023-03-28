@@ -11,12 +11,13 @@ struct RoutingView: View {
     // @State routingList:
     // @State selectedRoute
     var body: some View {
-        HStack {
-            Button("hello") {
-            }
+        HStack(spacing: 20) {
             // routing rules list
+            RoutingListView()
             // routing rule setting
+            RoutingSettingsView()
         }
+        .padding()
     }
 }
 
