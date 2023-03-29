@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StreamSettingsView: View {
     @Binding var streamSettings: StreamSettingsObject
-    @State private var selectedStreamMenu = 1
+    @State private var selectedStreamMenu = 0
     var body: some View {
         VStack {
             HStack {
@@ -32,6 +32,12 @@ struct StreamSettingsView: View {
             }
             .tabViewStyle(.automatic)
             .frame(height: 120)
+        }
+        .onChange(of: streamSettings.network) { _ in
+            selectedStreamMenu = 0
+        }
+        .onChange(of: streamSettings.security) { _ in
+            selectedStreamMenu = 1
         }
     }
     

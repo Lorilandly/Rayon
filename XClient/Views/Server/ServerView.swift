@@ -15,13 +15,13 @@ struct ServerView: View {
     var body: some View {
         HStack(spacing: 20) {
             ServerListView(serverList: $serverList, selectedIndex: $selectedIndex)
-        .frame(minHeight: 200)
+                .frame(minHeight: 200)
             
             if selectedIndex != nil {
                 ServerSettingsView(server: $serverList[selectedIndex!])
             } else {
                 Spacer()
-                Text("select a server")
+                Text("select server")
                 Spacer()
             }
         }

@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ServerListView: View {
     @Binding var serverList: [OutboundObject]
-    @State private var selectedServer: OutboundObject?
+    @State private var selectedServer: OutboundObject.ID?
     @Binding var selectedIndex: Int?
     
     var index: Int? {
-        serverList.firstIndex(where: { $0.id == selectedServer?.id })
+        serverList.firstIndex(where: { $0.id == selectedServer })
     }
 
     var body: some View {
@@ -21,12 +21,12 @@ struct ServerListView: View {
             Section("Servers") {
                 ForEach(serverList) { selected in
                     Text(selected.tag)
-                        .tag(selected)
+                        .tag(selected.id)
                 }
                 .onDelete(perform: deleteRow)
                 .onMove(perform: moveRows)
+                // TODO: allow edit tag
                 // TODO: implement drag & drop
-                //.onInsert(of: <#T##[UTType]#>, perform: <#T##(Int, [NSItemProvider]) -> Void#>)
             }
         }
         .listStyle(.bordered(alternatesRowBackgrounds: true))
@@ -35,12 +35,19 @@ struct ServerListView: View {
                 Button(action: addRow) {
                     Image(systemName: "plus")
                 }
+                .help("Add")
                 //Button(action: deleteRow) {
                 //Image(systemName: "minus")
                 //}
                 Button(action: duplicateRow) {
                     Image(systemName: "square.on.square")
                 }
+                .help("Clone")
+                .disabled(selectedServer == nil)
+                Button(action: shareRow) {
+                    Image(systemName: "square.and.arrow.up")
+                }
+                .help("Share")
                 .disabled(selectedServer == nil)
                 Spacer()
             }
@@ -57,15 +64,19 @@ struct ServerListView: View {
     
     func addRow() {
         let newServer = OutboundObject(tag: "new", proxySettings: VlessSettingsObject(), streamSettings: StreamSettingsObject())
-        selectedServer = newServer
+        selectedServer = newServer.id
         serverList.append(newServer)
     }
     
     func duplicateRow() {
+        /*
         if let server = selectedServer {
             serverList.append(server)
         }
+         */
     }
+    
+    func shareRow() {}
     
     func deleteRow(offset: IndexSet) {
         serverList.remove(atOffsets: offset)
