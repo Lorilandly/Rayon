@@ -8,29 +8,40 @@
 import SwiftUI
 
 struct RoutingSettingsView: View {
-    struct User: Identifiable {
-        let id: Int
-        var name: String
-        var score: Int
-    }
-    private var users = [
-            User(id: 1, name: "Taylor Swift", score: 95),
-            User(id: 2, name: "Justin Bieber", score: 80),
-            User(id: 3, name: "Adele Adkins", score: 85)
-            ]
-    var table: some View {
-        Table(users) {
-            TableColumn("name", value: \.name)
-        }
-    }
+    private let tabs = [
+        TabItem(title: "Block", explain: "explain block"),
+        TabItem(title: "Direct", explain: "explain direct"),
+        TabItem(title: "Proxy", explain: "explain proxy"),
+        ]
     
     var body: some View {
-        TabView {
-            table.tabItem{Text("Block")}
-            Text("2").tabItem{Text("Direct")}
-            Text("3").tabItem{Text("Proxy")}
+        VStack(alignment: .leading) {
+            TabView {
+                ForEach(tabs) { tab in
+                    VStack(alignment: .leading) {
+                        RoutingTable()
+                            .tableStyle(.inset)
+                        
+                        tab.explain
+                            .padding([.leading, .bottom], 3.0)
+                            .font(.footnote)
+                    }
+                    .tabItem {tab.title}
+                }
+            }
+            .tabViewStyle(.automatic)
         }
-        .tabViewStyle(.automatic)
+    }
+}
+
+private struct TabItem: Identifiable {
+    let id = UUID()
+    let title: Text
+    let explain: Label<Text, Image>
+    
+    init(title: String, explain: String) {
+        self.title = Text(NSLocalizedString(title, comment: title))
+        self.explain = Label(NSLocalizedString(explain, comment: explain), systemImage: "info.circle")
     }
 }
 

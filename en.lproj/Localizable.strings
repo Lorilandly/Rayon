@@ -5,3 +5,8 @@
   Created by 李浩安 on 2023/3/28.
   
 */
+
+"select server" = "Please select a server";
+"explain block" = "All traffics in this table are discarded";
+"explain direct" = "All traffics in this table are connected directly";
+"explain proxy" = "All traffics in this table are connected through the proxy server of choice";

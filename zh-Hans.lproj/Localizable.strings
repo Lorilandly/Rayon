@@ -13,6 +13,7 @@
 
 "Server" = "服务器";
 "Servers" = "服务器";
+"select server" = "选择一个服务器";
 "Save" = "保存";
 "Cancel" = "取消";
 
@@ -20,3 +21,6 @@
 "Block" = "阻止";
 "Direct" = "直连";
 "Proxy" = "代理";
+"explain block" = "在这里添加你想屏蔽的网页（广告等）";
+"explain direct" = "在这里添加你想直连（不用代理）的网站";
+"explain proxy" = "在这里添加你想要通过代理服务器访问的网站";
