@@ -15,34 +15,16 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     
     final private class MacExtrasConfigurator: NSObject {
         
-        private var statusBar: NSStatusBar
         private var statusItem: NSStatusItem
-        private var mainView: NSView
-        
-        private struct MenuView: View {
-            var body: some View {
-                HStack {
-                    Text("Hello from SwiftUI View")
-                    Spacer()
-                }
-                .background(Color.blue)
-                .padding()
-            }
-        }
         
         // MARK: - Lifecycle
         
         override init() {
-            statusBar = NSStatusBar.system
-            statusItem = statusBar.statusItem(withLength: NSStatusItem.squareLength)
-            mainView = NSHostingView(rootView: MenuView())
-            mainView.frame = NSRect(x: 0, y: 0, width: 300, height: 250)
+            statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
             
             super.init()
             
             createMenu()
-            
-            //
         }
         
         // MARK: - Private
@@ -56,41 +38,44 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                     accessibilityDescription: "an app"
                 )
                 
-                let serverMenuGroup = NSMenuItem()
-                serverMenuGroup.title = "Servers"
+                let toggleXrayItem = NSMenuItem(title: "Turn on", action: nil, keyEquivalent: "")
                 
-                let groupDetailsMenuItem = NSMenuItem()
-                groupDetailsMenuItem.view = mainView
+                let serverMenu = NSMenuItem(title: "Servers", action: nil, keyEquivalent: "")
                 
-                let groupSubmenu = NSMenu()
-                groupSubmenu.addItem(groupDetailsMenuItem)
+                let serverSubmenu = NSMenu()
+                serverMenu.submenu = serverSubmenu
                 
-                let routingMenuGroup = NSMenuItem()
-                routingMenuGroup.title = "Routings"
+                for server in outboundExample {
+                    let serverMenuItem = NSMenuItem(title: server.tag, action: nil, keyEquivalent: "")
+                    serverMenuItem.target = self
+                    serverSubmenu.addItem(serverMenuItem)
+                }
+                serverSubmenu.addItem(NSMenuItem.separator())
+                let serverConfigMenuItem = NSMenuItem(title: "Edit...", action: nil, keyEquivalent: "")
+                serverConfigMenuItem.target = self
+                serverSubmenu.addItem(serverConfigMenuItem)
                 
-                let secondSubMenuItem = NSMenuItem()
-                secondSubMenuItem.title = "SubItem"
-                secondSubMenuItem.target = self
-                secondSubMenuItem.action = #selector(Self.onItemClick(_:))
+                let routingMenu = NSMenuItem(title: "Routings", action: nil, keyEquivalent: "")
                 
-                let secondSubMenu = NSMenu()
-                secondSubMenu.addItem(secondSubMenuItem)
+                let routingSubmenu = NSMenu()
+                routingMenu.submenu = routingSubmenu
+
+                let routingMenuItem = NSMenuItem(title: "SubItem", action: #selector(onItemClick(_:)), keyEquivalent: "")
+                routingMenuItem.target = self
+                routingSubmenu.addItem(routingMenuItem)
                 
-                let preferenceItem = NSMenuItem()
-                preferenceItem.title = "Preferences..."
+                let preferenceItem = NSMenuItem(title: "Preferences...", action: #selector(preferenceAction(_:)), keyEquivalent: ",")
                 preferenceItem.target = self
-                preferenceItem.action = #selector(Self.preferenceAction(_:))
                 
-                let quitItem = NSMenuItem()
-                quitItem.title = "Quit"
+                let quitItem = NSMenuItem(title: "Quit", action: #selector(quitAction(_:)), keyEquivalent: "q")
                 quitItem.target = self
-                quitItem.action = #selector(Self.quitAction(_:))
                 
                 let mainMenu = NSMenu()
-                mainMenu.addItem(serverMenuGroup)
-                mainMenu.setSubmenu(groupSubmenu, for: serverMenuGroup)
-                mainMenu.addItem(routingMenuGroup)
-                mainMenu.setSubmenu(secondSubMenu, for: routingMenuGroup)
+                mainMenu.addItem(toggleXrayItem)
+                mainMenu.addItem(NSMenuItem.separator())
+                mainMenu.addItem(serverMenu)
+                mainMenu.addItem(routingMenu)
+                mainMenu.addItem(NSMenuItem.separator())
                 mainMenu.addItem(preferenceItem)
                 mainMenu.addItem(quitItem)
                 
@@ -111,6 +96,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
             }
         }
+        
         @objc private func quitAction(_ sender: Any?) {
             NSApp.terminate(nil)
         }
