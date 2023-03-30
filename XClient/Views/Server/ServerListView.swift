@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ServerListView: View {
     @Binding var serverList: [OutboundObject]
-    @State private var selectedServer: OutboundObject.ID?
     @Binding var selectedIndex: Int?
+    @State private var selectedServer: OutboundObject.ID?
+    @State private var sharePresented: Bool = false
     
     var index: Int? {
         serverList.firstIndex(where: { $0.id == selectedServer })
@@ -20,6 +21,7 @@ struct ServerListView: View {
         List(selection: $selectedServer) {
             Section("Servers") {
                 ForEach(serverList) { selected in
+                    
                     Text(selected.tag)
                         .tag(selected.id)
                 }
@@ -39,16 +41,20 @@ struct ServerListView: View {
                 //Button(action: deleteRow) {
                 //Image(systemName: "minus")
                 //}
+                
                 Button(action: duplicateRow) {
                     Image(systemName: "square.on.square")
                 }
                 .help("Clone")
                 .disabled(selectedServer == nil)
-                Button(action: shareRow) {
+                
+                Button(action: { sharePresented.toggle() }) {
                     Image(systemName: "square.and.arrow.up")
                 }
+                .popover(isPresented: $sharePresented, content: shareView)
                 .help("Share")
                 .disabled(selectedServer == nil)
+                
                 Spacer()
             }
             .buttonStyle(.plain)
@@ -60,6 +66,10 @@ struct ServerListView: View {
         .onChange(of: selectedServer) { _ in
             selectedIndex = index
         }
+    }
+    
+    func shareView() -> some View {
+        Text("not implemented").frame(width: 100, height: 100)
     }
     
     func addRow() {
@@ -75,8 +85,6 @@ struct ServerListView: View {
         }
          */
     }
-    
-    func shareRow() {}
     
     func deleteRow(offset: IndexSet) {
         serverList.remove(atOffsets: offset)

@@ -23,15 +23,13 @@ struct ServerSettingsView: View {
             StreamSettingsView(streamSettings: $serverData.streamSettings)
             HStack {
                 Spacer()
-                Button("Save") {
+                Button("Save", action: {
                     // when save is pressed, new object is generated instead of changing the original
                     server.update(from: serverData)
                     // restart xray
-                }
+                })
                 .buttonStyle(.borderedProminent)
-                Button("Cancel") {
-                    serverData = server.data
-                }
+                Button("Cancel", action: { serverData = server.data })
                 .buttonStyle(.bordered)
             }
         }

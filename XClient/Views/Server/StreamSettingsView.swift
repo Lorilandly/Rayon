@@ -27,8 +27,8 @@ struct StreamSettingsView: View {
                 }.frame(width: 140)
             }
             TabView(selection: $selectedStreamMenu) {
-                networkView().padding(.horizontal).tabItem { Text("Network") }.tag(1)
-                securityView().padding(.horizontal).tabItem { Text("Security") }.tag(2)
+                networkView().padding(.horizontal).tabItem { Text("Network") }.tag(0)
+                securityView().padding(.horizontal).tabItem { Text("Security") }.tag(1)
             }
             .tabViewStyle(.automatic)
             .frame(height: 120)
