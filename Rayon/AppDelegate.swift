@@ -38,7 +38,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                     accessibilityDescription: "an app"
                 )
                 
-                let toggleXrayItem = NSMenuItem(title: "Turn on", action: nil, keyEquivalent: "")
+                let toggleXrayItem = NSMenuItem(title: "Turn on", action: #selector(onOffAction(_:)), keyEquivalent: "")
+                toggleXrayItem.target = self
                 
                 let serverMenu = NSMenuItem(title: "Servers", action: nil, keyEquivalent: "")
                 
@@ -60,7 +61,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 let routingSubmenu = NSMenu()
                 routingMenu.submenu = routingSubmenu
 
-                let routingMenuItem = NSMenuItem(title: "SubItem", action: #selector(onItemClick(_:)), keyEquivalent: "")
+                let routingMenuItem = NSMenuItem(title: "SubItem", action: #selector(exampleAction(_:)), keyEquivalent: "")
                 routingMenuItem.target = self
                 routingSubmenu.addItem(routingMenuItem)
                 
@@ -85,8 +86,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         
         // MARK: - Actions
         
-        @objc private func onItemClick(_ sender: Any?) {
+        @objc private func exampleAction(_ sender: Any?) {
             print("Hi from action")
+        }
+        
+        @objc private func onOffAction(_ sender: Any?) {
+            statusItem.button?.image = NSImage(
+                systemSymbolName: "paperplane.fill",
+                accessibilityDescription: "an app"
+            )
         }
         
         @objc private func preferenceAction(_ sender: Any?) {
