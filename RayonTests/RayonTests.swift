@@ -1,14 +1,14 @@
 //
-//  XClientTests.swift
-//  XClientTests
+//  RayonTests.swift
+//  RayonTests
 //
 //  Created by 李浩安 on 2023/3/15.
 //
 
 import XCTest
-@testable import XClient
+@testable import Rayon
 
-final class XClientTests: XCTestCase {
+final class RayonTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

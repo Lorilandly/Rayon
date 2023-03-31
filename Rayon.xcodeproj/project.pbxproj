@@ -11,9 +11,9 @@
 		B50B3CDA29C1B779000414AC /* ServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3CD929C1B779000414AC /* ServerView.swift */; };
 		B50B3CDC29C1B779000414AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B50B3CDB29C1B779000414AC /* Assets.xcassets */; };
 		B50B3CDF29C1B779000414AC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B50B3CDE29C1B779000414AC /* Preview Assets.xcassets */; };
-		B50B3CEA29C1B77A000414AC /* XClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3CE929C1B77A000414AC /* XClientTests.swift */; };
-		B50B3CF429C1B77A000414AC /* XClientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3CF329C1B77A000414AC /* XClientUITests.swift */; };
-		B50B3CF629C1B77A000414AC /* XClientUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3CF529C1B77A000414AC /* XClientUITestsLaunchTests.swift */; };
+		B50B3CEA29C1B77A000414AC /* RayonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3CE929C1B77A000414AC /* RayonTests.swift */; };
+		B50B3CF429C1B77A000414AC /* RayonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3CF329C1B77A000414AC /* RayonUITests.swift */; };
+		B50B3CF629C1B77A000414AC /* RayonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3CF529C1B77A000414AC /* RayonUITestsLaunchTests.swift */; };
 		B50B3D0429C1B7D3000414AC /* VLESS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B3D0329C1B7D3000414AC /* VLESS.swift */; };
 		B5673ACC29CAA8CD00B26B19 /* RoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673ACB29CAA8CD00B26B19 /* RoutingView.swift */; };
 		B5673AD029CC262D00B26B19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673ACF29CC262D00B26B19 /* AppDelegate.swift */; };
@@ -77,10 +77,10 @@
 		B50B3CDE29C1B779000414AC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B50B3CE029C1B779000414AC /* Rayon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rayon.entitlements; sourceTree = "<group>"; };
 		B50B3CE529C1B77A000414AC /* RayonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RayonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B50B3CE929C1B77A000414AC /* XClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XClientTests.swift; sourceTree = "<group>"; };
+		B50B3CE929C1B77A000414AC /* RayonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RayonTests.swift; sourceTree = "<group>"; };
 		B50B3CEF29C1B77A000414AC /* RayonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RayonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B50B3CF329C1B77A000414AC /* XClientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XClientUITests.swift; sourceTree = "<group>"; };
-		B50B3CF529C1B77A000414AC /* XClientUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XClientUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B50B3CF329C1B77A000414AC /* RayonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RayonUITests.swift; sourceTree = "<group>"; };
+		B50B3CF529C1B77A000414AC /* RayonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RayonUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B50B3D0329C1B7D3000414AC /* VLESS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VLESS.swift; sourceTree = "<group>"; };
 		B5673ACB29CAA8CD00B26B19 /* RoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingView.swift; sourceTree = "<group>"; };
 		B5673ACF29CC262D00B26B19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,8 +148,8 @@
 			children = (
 				B5673B3129D2C0C500B26B19 /* Localizable.strings */,
 				B50B3CD629C1B779000414AC /* Rayon */,
-				B50B3CE829C1B77A000414AC /* XClientTests */,
-				B50B3CF229C1B77A000414AC /* XClientUITests */,
+				B50B3CE829C1B77A000414AC /* RayonTests */,
+				B50B3CF229C1B77A000414AC /* RayonUITests */,
 				B5673B7829D53A3100B26B19 /* XrayProxy */,
 				B5673B3E29D5369A00B26B19 /* Frameworks */,
 				B50B3CD529C1B779000414AC /* Products */,
@@ -191,21 +191,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		B50B3CE829C1B77A000414AC /* XClientTests */ = {
+		B50B3CE829C1B77A000414AC /* RayonTests */ = {
 			isa = PBXGroup;
 			children = (
-				B50B3CE929C1B77A000414AC /* XClientTests.swift */,
+				B50B3CE929C1B77A000414AC /* RayonTests.swift */,
 			);
-			path = XClientTests;
+			path = RayonTests;
 			sourceTree = "<group>";
 		};
-		B50B3CF229C1B77A000414AC /* XClientUITests */ = {
+		B50B3CF229C1B77A000414AC /* RayonUITests */ = {
 			isa = PBXGroup;
 			children = (
-				B50B3CF329C1B77A000414AC /* XClientUITests.swift */,
-				B50B3CF529C1B77A000414AC /* XClientUITestsLaunchTests.swift */,
+				B50B3CF329C1B77A000414AC /* RayonUITests.swift */,
+				B50B3CF529C1B77A000414AC /* RayonUITestsLaunchTests.swift */,
 			);
-			path = XClientUITests;
+			path = RayonUITests;
 			sourceTree = "<group>";
 		};
 		B50B3D0229C1B7BD000414AC /* ProxyProtocols */ = {
@@ -480,7 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B50B3CEA29C1B77A000414AC /* XClientTests.swift in Sources */,
+				B50B3CEA29C1B77A000414AC /* RayonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,8 +488,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B50B3CF629C1B77A000414AC /* XClientUITestsLaunchTests.swift in Sources */,
-				B50B3CF429C1B77A000414AC /* XClientUITests.swift in Sources */,
+				B50B3CF629C1B77A000414AC /* RayonUITestsLaunchTests.swift in Sources */,
+				B50B3CF429C1B77A000414AC /* RayonUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,13 +1,13 @@
 //
-//  XClientUITests.swift
-//  XClientUITests
+//  RayonUITests.swift
+//  RayonUITests
 //
 //  Created by 李浩安 on 2023/3/15.
 //
 
 import XCTest
 
-final class XClientUITests: XCTestCase {
+final class RayonUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

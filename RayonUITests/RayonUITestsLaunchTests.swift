@@ -1,13 +1,13 @@
 //
-//  XClientUITestsLaunchTests.swift
-//  XClientUITests
+//  RayonUITestsLaunchTests.swift
+//  RayonUITests
 //
 //  Created by 李浩安 on 2023/3/15.
 //
 
 import XCTest
 
-final class XClientUITestsLaunchTests: XCTestCase {
+final class RayonUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
