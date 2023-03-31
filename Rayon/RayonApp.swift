@@ -1,5 +1,5 @@
 //
-//  XClientApp.swift
+//  RayonApp.swift
 //  XClient
 //
 //  Created by 李浩安 on 2023/3/15.
@@ -26,7 +26,7 @@
 import SwiftUI
 
 @main
-struct XClientApp: App {
+struct RayonApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     
     var body: some Scene {

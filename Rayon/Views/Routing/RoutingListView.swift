@@ -10,6 +10,8 @@ import SwiftUI
 struct RoutingListView: View {
     var body: some View {
         List() {
+            Section("Rules") {
+            }
         }
         .listStyle(.bordered(alternatesRowBackgrounds: true))
         .safeAreaInset(edge: .bottom) {
