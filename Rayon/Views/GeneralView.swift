@@ -10,6 +10,8 @@ import SwiftUI
 struct GeneralView: View {
     @AppStorage("General.mode")
     private var mode: Mode = .simple
+    @State private var excludeSimpleHostnames = false
+    @State private var appRule = false
     
     enum Mode: String, CaseIterable, Identifiable {
         var id: Self { self }
@@ -27,6 +29,8 @@ struct GeneralView: View {
             }
             .pickerStyle(.inline)
             .padding()
+            Toggle("Include localhost", isOn: $excludeSimpleHostnames)
+            Toggle("App rule", isOn: $appRule)
         }
     }
 }
