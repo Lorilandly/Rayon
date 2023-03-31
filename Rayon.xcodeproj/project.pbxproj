@@ -22,9 +22,9 @@
 		B5673B2C29D2B41900B26B19 /* RoutingSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673B2B29D2B41900B26B19 /* RoutingSettingsView.swift */; };
 		B5673B2F29D2C0C500B26B19 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5673B3129D2C0C500B26B19 /* Localizable.strings */; };
 		B5673B3429D2EDAB00B26B19 /* RoutingTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673B3329D2EDAB00B26B19 /* RoutingTable.swift */; };
-		B5673B3729D50EC300B26B19 /* RoutingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673B3629D50EC300B26B19 /* RoutingObject.swift */; };
 		B5673B7729D53A3100B26B19 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5673B3F29D5369A00B26B19 /* NetworkExtension.framework */; };
 		B5673B8429D58C2000B26B19 /* AppProxyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673B7929D53A3100B26B19 /* AppProxyProvider.swift */; };
+		B5673B8629D68CE200B26B19 /* RoutingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673B8529D68CE200B26B19 /* RoutingObject.swift */; };
 		B568E1E129C1BB1C002DC185 /* ProxySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */; };
 		B568E1E329C1BB94002DC185 /* Vmess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E229C1BB94002DC185 /* Vmess.swift */; };
 		B568E1E729C1CEB7002DC185 /* TCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E629C1CEB7002DC185 /* TCP.swift */; };
@@ -90,12 +90,12 @@
 		B5673B3029D2C0C500B26B19 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5673B3229D2C11200B26B19 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B5673B3329D2EDAB00B26B19 /* RoutingTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingTable.swift; sourceTree = "<group>"; };
-		B5673B3629D50EC300B26B19 /* RoutingObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingObject.swift; sourceTree = "<group>"; };
 		B5673B3F29D5369A00B26B19 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		B5673B7629D53A3100B26B19 /* XrayProxy.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = XrayProxy.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5673B7929D53A3100B26B19 /* AppProxyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProxyProvider.swift; sourceTree = "<group>"; };
 		B5673B7B29D53A3100B26B19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5673B7C29D53A3100B26B19 /* XrayProxy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XrayProxy.entitlements; sourceTree = "<group>"; };
+		B5673B8529D68CE200B26B19 /* RoutingObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingObject.swift; sourceTree = "<group>"; };
 		B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxySettingsView.swift; sourceTree = "<group>"; };
 		B568E1E229C1BB94002DC185 /* Vmess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vmess.swift; sourceTree = "<group>"; };
 		B568E1E629C1CEB7002DC185 /* TCP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCP.swift; sourceTree = "<group>"; };
@@ -263,7 +263,7 @@
 			children = (
 				B568E1EC29C2C201002DC185 /* OutboundObject.swift */,
 				B5C3E60529C9C04F007D708A /* Store.swift */,
-				B5673B3629D50EC300B26B19 /* RoutingObject.swift */,
+				B5673B8529D68CE200B26B19 /* RoutingObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -462,7 +462,7 @@
 				B568E1E929C2A394002DC185 /* TLS.swift in Sources */,
 				B5C3E60829C9EB25007D708A /* TestView.swift in Sources */,
 				B568E1EB29C2A710002DC185 /* StreamSettingsView.swift in Sources */,
-				B5673B3729D50EC300B26B19 /* RoutingObject.swift in Sources */,
+				B5673B8629D68CE200B26B19 /* RoutingObject.swift in Sources */,
 				B5673B2A29D29BB300B26B19 /* RoutingListView.swift in Sources */,
 				B5C3E60629C9C04F007D708A /* Store.swift in Sources */,
 				B50B3CD829C1B779000414AC /* RayonApp.swift in Sources */,

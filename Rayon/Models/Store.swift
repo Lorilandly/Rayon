@@ -8,5 +8,5 @@
 import Foundation
 
 class Store: ObservableObject {
-    @Published var servers: [OutboundObject] = []
+    @Published var servers: [OutboundObject] = outboundExample
 }

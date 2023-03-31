@@ -20,9 +20,9 @@ struct ServerListView: View {
     var body: some View {
         List(selection: $selectedServer) {
             Section("Servers") {
-                ForEach(serverList) { selected in
-                    
-                    Text(selected.tag)
+                ForEach($serverList) { $selected in
+                    TextField("", text: $selected.tag)
+                        .textFieldStyle(.plain)
                         .tag(selected.id)
                 }
                 .onDelete(perform: deleteRow)
