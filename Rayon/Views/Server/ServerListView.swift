@@ -74,8 +74,8 @@ struct ServerListView: View {
     
     func addRow() {
         let newServer = OutboundObject(tag: "new", proxySettings: VlessSettingsObject(), streamSettings: StreamSettingsObject())
-        selectedServer = newServer.id
         serverList.append(newServer)
+        selectedServer = newServer.id
     }
     
     func duplicateRow() {

@@ -11,15 +11,17 @@ struct TLS: View {
     @Binding var tlsSettings: TlsObject
     var body: some View {
         Form {
-            Toggle(isOn: $tlsSettings.allowInsecure) {
+            Toggle(isOn: $tlsSettings.allowInsecure ?? false) {
                 Text("Allow Insecure")
             }
-            Toggle(isOn: $tlsSettings.disableSystemRoot) {
+            Toggle(isOn: $tlsSettings.disableSystemRoot ?? false) {
                 Text("Disable System Root")
             }
             Picker(selection: $tlsSettings.fingerprint, label: Text("Fingerprint:")) {
-                ForEach(TlsFingerprint.allCases, id: \.self) { fingerprint in
+                Text("None").tag(nil as TlsObject.Fingerprint?)
+                ForEach(TlsObject.Fingerprint.allCases, id: \.self) { fingerprint in
                     Text(fingerprint.name)
+                        .tag(fingerprint as TlsObject.Fingerprint?)
                 }
             }
         }

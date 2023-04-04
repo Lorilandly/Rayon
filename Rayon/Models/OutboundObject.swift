@@ -11,13 +11,13 @@ import Network
 struct OutboundObject: Identifiable, Hashable {
     let id = UUID()
     var tag: String
-    var sendThrough: IPv4Address?
+    var sendThrough: String?
     var proxySettings: any ProxySettings
     var streamSettings: StreamSettingsObject
 }
 
 var outboundExample: [OutboundObject] = [
-    OutboundObject(tag: "server0", proxySettings: VlessSettingsObject(address: "hello.com", port: 1234, ID: "dachang", flow: VlessFlow.xtls_rprx_vision), streamSettings: StreamSettingsObject()),
+    OutboundObject(tag: "server0", proxySettings: VlessSettingsObject(address: "hello.com", port: 1234, users: [VlessSettingsObject.UserObject(id: "dachang", flow: VlessSettingsObject.Flow.xtls_rprx_vision)]), streamSettings: StreamSettingsObject()),
     OutboundObject(tag: "server1", proxySettings: VmessSettingsObject(), streamSettings: StreamSettingsObject(security: Security.tls)),
     OutboundObject(tag: "server2", proxySettings: VmessSettingsObject(), streamSettings: StreamSettingsObject(network: StreamNetwork.ws, security: Security.tls)),
 ]
@@ -39,7 +39,7 @@ extension OutboundObject {
     // the user edits Outbound.Data; Outbound gets updated only when "ok" is pressed
     struct Data: Hashable {
         var tag: String = "New Server"
-        var sendThrough: IPv4Address? = IPv4Address("0.0.0.0")
+        var sendThrough: String?
         var proxyProtocol: Proxy = Proxy.vless
         var allProxySettings: AllProxySettings = AllProxySettings()
         var streamSettings: StreamSettingsObject = StreamSettingsObject()
@@ -74,7 +74,8 @@ extension OutboundObject {
     }
 }
 
-enum Proxy: String, CaseIterable, Identifiable, Hashable {
+/// The available proxy protocols
+enum Proxy: String, CaseIterable, Identifiable, Hashable, Codable {
     case vless
     case vmess
     case trojan
@@ -86,110 +87,67 @@ enum Proxy: String, CaseIterable, Identifiable, Hashable {
     var id: Self { self }
 }
 
-// only store the used protocol
-protocol ProxySettings: Hashable {
+/// only store the in use protocol
+protocol ProxySettings: Hashable, Codable {
     var proxyProtocol: Proxy {get}
 }
 
-// store all the protocol settings
+/// store all the protocol settings
 struct AllProxySettings: Hashable {
     var vlessSettings: VlessSettingsObject = VlessSettingsObject()
     var vmessSettings: VmessSettingsObject = VmessSettingsObject()
 }
 
 struct VlessSettingsObject: ProxySettings {
+    enum Encryption: String, CaseIterable, Identifiable, Codable {
+        case none
+        
+        var id: Self { self }
+    }
+    
+    enum Flow: String, CaseIterable, Identifiable, Codable {
+        case xtls_rprx_vision = "xtls-rprx-vision"
+        case xtls_rprx_vision_udp443 = "xtls-rprx-vision-udp443"
+        
+        var id: Self { self }
+    }
+    
+    struct UserObject: Hashable, Codable {
+        var id: String = ""
+        var encryption: Encryption = .none
+        var flow: Flow?
+        var level: Int?
+    }
+    
     let proxyProtocol = Proxy.vless
     var address: String = ""
     var port: UInt16?
-    var ID: String = ""
-    var encryption: VlessEncryption = VlessEncryption.none
-    var flow: VlessFlow = VlessFlow.none
+    var users: [UserObject] = [.init()]
+    // if `users` is empty, provide a default
     
+    enum CodingKeys: String, CodingKey {
+        case address
+        case port
+        case users
+    }
 }
-
-enum VlessFlow: String, CaseIterable, Identifiable {
-    case none
-    case xtls_rprx_vision
     
-    var id: Self { self }
-}
-
-enum VlessEncryption: String, CaseIterable, Identifiable {
-    case none
-    
-    var id: Self { self }
-}
-
 struct VmessSettingsObject: ProxySettings {
+    struct UserObject: Hashable, Codable {
+        var id = String()
+        var alterid: Int?
+        var security = "auto"
+        var level: Int?
+    }
+    
     let proxyProtocol = Proxy.vmess
     var address = String()
     var port: UInt16?
-    var ID = String()
-    var alterid = String()
-}
-
-struct StreamSettingsObject: Hashable {
-    var network: StreamNetwork = StreamNetwork.tcp
-    var tcpSettings: TcpObject = TcpObject()
-    // add more settings
+    var users: [UserObject] = [.init()]
     
-    var security: Security = Security.none
-    var tlsSettings: TlsObject = TlsObject()
-    // add more settings
-}
-
-enum StreamNetwork: String, CaseIterable, Identifiable {
-    case tcp
-    case kcp
-    case ws
-    case http
-    case domainsocket
-    case quic
-    case grpc
-    
-    var id: Self { self }
-    var name: String {
-        rawValue.uppercased()
-    }
-}
-
-struct TcpObject: Hashable {
-    var http: Bool = false
-    var host: String = ""
-    var path: String = ""
-}
-
-enum Security: String, CaseIterable, Identifiable {
-    case none
-    case tls
-    case reality
-    
-    var id: Self { self }
-    var name: String {
-        rawValue.uppercased()
-    }
-}
-
-struct TlsObject: Hashable {
-    var allowInsecure: Bool = false
-    var disableSystemRoot: Bool = false
-    var fingerprint: TlsFingerprint = TlsFingerprint.none
-}
-
-enum TlsFingerprint: String, CaseIterable {
-    // careful none case is an empty string in the config file
-    case none
-    case chrome
-    case firefox
-    case safari
-    case ios
-    case android
-    case edge
-    case qq
-    case random
-    case randomized
-    
-    var name: String {
-        rawValue.capitalized
+    enum CodingKeys: String, CodingKey {
+        case address
+        case port
+        case users
     }
 }

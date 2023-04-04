@@ -35,6 +35,12 @@ struct ServerSettingsView: View {
         }
         .onChange(of: server) { newServer in
             serverData = newServer.data
+            let tmp = JSONEncoder()
+            do {
+                let data = try tmp.encode(serverData.streamSettings)
+                let jsonstr = String(data: data, encoding: .utf8)!
+                print(jsonstr)
+            } catch {}
         }
     }
 }

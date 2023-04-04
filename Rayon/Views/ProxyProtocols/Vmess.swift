@@ -23,13 +23,13 @@ struct Vmess: View {
             HStack {
                 Text("ID:")
                     .frame(width: leading_text_width, alignment: .trailing)
-                TextField("placeholder", text: $protocol_config.ID)
+                TextField("placeholder", text: $protocol_config.users.first!.id)
             //}
             //HStack {
                 Text("AlterID:")
                     .frame(width: leading_text_width, alignment: .trailing)
                 // this should use drop down
-                TextField("0", text: $protocol_config.alterid)
+                TextField("0", value: $protocol_config.users.first!.alterid, format: .number)
                     .frame(width: 70)
             }
         }

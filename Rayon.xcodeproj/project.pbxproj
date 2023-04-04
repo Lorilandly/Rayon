@@ -25,12 +25,16 @@
 		B5673B7729D53A3100B26B19 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5673B3F29D5369A00B26B19 /* NetworkExtension.framework */; };
 		B5673B8429D58C2000B26B19 /* AppProxyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673B7929D53A3100B26B19 /* AppProxyProvider.swift */; };
 		B5673B8629D68CE200B26B19 /* RoutingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673B8529D68CE200B26B19 /* RoutingObject.swift */; };
+		B5673B8A29D7064C00B26B19 /* Rayon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5673B8829D7064C00B26B19 /* Rayon.xcdatamodeld */; };
+		B5673B8C29D708F100B26B19 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673B8B29D708F100B26B19 /* Persistence.swift */; };
+		B5673B8E29DBEEAC00B26B19 /* StreamSettingsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673B8D29DBEEAC00B26B19 /* StreamSettingsObject.swift */; };
 		B568E1E129C1BB1C002DC185 /* ProxySettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */; };
 		B568E1E329C1BB94002DC185 /* Vmess.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E229C1BB94002DC185 /* Vmess.swift */; };
 		B568E1E729C1CEB7002DC185 /* TCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E629C1CEB7002DC185 /* TCP.swift */; };
 		B568E1E929C2A394002DC185 /* TLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1E829C2A394002DC185 /* TLS.swift */; };
 		B568E1EB29C2A710002DC185 /* StreamSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1EA29C2A710002DC185 /* StreamSettingsView.swift */; };
 		B568E1ED29C2C201002DC185 /* OutboundObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568E1EC29C2C201002DC185 /* OutboundObject.swift */; };
+		B5A2784429DC03C600D15CD4 /* Trick.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2784329DC03C600D15CD4 /* Trick.swift */; };
 		B5C3E5FC29C46510007D708A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3E5FB29C46510007D708A /* SettingsView.swift */; };
 		B5C3E5FE29C82A36007D708A /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = B5C3E5FD29C82A36007D708A /* Credits.html */; };
 		B5C3E60029C94144007D708A /* ServerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3E5FF29C94144007D708A /* ServerListView.swift */; };
@@ -96,12 +100,16 @@
 		B5673B7B29D53A3100B26B19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5673B7C29D53A3100B26B19 /* XrayProxy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XrayProxy.entitlements; sourceTree = "<group>"; };
 		B5673B8529D68CE200B26B19 /* RoutingObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingObject.swift; sourceTree = "<group>"; };
+		B5673B8929D7064C00B26B19 /* Inbounds.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Inbounds.xcdatamodel; sourceTree = "<group>"; };
+		B5673B8B29D708F100B26B19 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		B5673B8D29DBEEAC00B26B19 /* StreamSettingsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamSettingsObject.swift; sourceTree = "<group>"; };
 		B568E1E029C1BB1C002DC185 /* ProxySettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxySettingsView.swift; sourceTree = "<group>"; };
 		B568E1E229C1BB94002DC185 /* Vmess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vmess.swift; sourceTree = "<group>"; };
 		B568E1E629C1CEB7002DC185 /* TCP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCP.swift; sourceTree = "<group>"; };
 		B568E1E829C2A394002DC185 /* TLS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLS.swift; sourceTree = "<group>"; };
 		B568E1EA29C2A710002DC185 /* StreamSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamSettingsView.swift; sourceTree = "<group>"; };
 		B568E1EC29C2C201002DC185 /* OutboundObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutboundObject.swift; sourceTree = "<group>"; };
+		B5A2784329DC03C600D15CD4 /* Trick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trick.swift; sourceTree = "<group>"; };
 		B5C3E5FB29C46510007D708A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B5C3E5FD29C82A36007D708A /* Credits.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		B5C3E5FF29C94144007D708A /* ServerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListView.swift; sourceTree = "<group>"; };
@@ -175,10 +183,11 @@
 				B5673ACF29CC262D00B26B19 /* AppDelegate.swift */,
 				B5C3E60729C9EB25007D708A /* TestView.swift */,
 				B5C9D4BE29C3134F00608F37 /* Views */,
-				B50B3CDB29C1B779000414AC /* Assets.xcassets */,
 				B50B3CE029C1B779000414AC /* Rayon.entitlements */,
+				B5673B8729D7060F00B26B19 /* Resources */,
 				B568E1E429C1BBCA002DC185 /* Models */,
 				B50B3CDD29C1B779000414AC /* Preview Content */,
+				B5A2784329DC03C600D15CD4 /* Trick.swift */,
 			);
 			path = Rayon;
 			sourceTree = "<group>";
@@ -258,12 +267,23 @@
 			path = XrayProxy;
 			sourceTree = "<group>";
 		};
+		B5673B8729D7060F00B26B19 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B50B3CDB29C1B779000414AC /* Assets.xcassets */,
+				B5673B8829D7064C00B26B19 /* Rayon.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		B568E1E429C1BBCA002DC185 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				B568E1EC29C2C201002DC185 /* OutboundObject.swift */,
+				B5673B8B29D708F100B26B19 /* Persistence.swift */,
 				B5C3E60529C9C04F007D708A /* Store.swift */,
 				B5673B8529D68CE200B26B19 /* RoutingObject.swift */,
+				B5673B8D29DBEEAC00B26B19 /* StreamSettingsObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -453,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5673ACC29CAA8CD00B26B19 /* RoutingView.swift in Sources */,
+				B5673B8E29DBEEAC00B26B19 /* StreamSettingsObject.swift in Sources */,
 				B5C3E60029C94144007D708A /* ServerListView.swift in Sources */,
 				B568E1E129C1BB1C002DC185 /* ProxySettingsView.swift in Sources */,
 				B568E1E729C1CEB7002DC185 /* TCP.swift in Sources */,
@@ -467,7 +488,10 @@
 				B5C3E60629C9C04F007D708A /* Store.swift in Sources */,
 				B50B3CD829C1B779000414AC /* RayonApp.swift in Sources */,
 				B568E1E329C1BB94002DC185 /* Vmess.swift in Sources */,
+				B5673B8C29D708F100B26B19 /* Persistence.swift in Sources */,
+				B5673B8A29D7064C00B26B19 /* Rayon.xcdatamodeld in Sources */,
 				B50B3D0429C1B7D3000414AC /* VLESS.swift in Sources */,
+				B5A2784429DC03C600D15CD4 /* Trick.swift in Sources */,
 				B5C3E60229C98289007D708A /* ServerSettingsView.swift in Sources */,
 				B5673B2729CD9F2100B26B19 /* GeneralView.swift in Sources */,
 				B5673B3429D2EDAB00B26B19 /* RoutingTable.swift in Sources */,
@@ -659,12 +683,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Loriland.Rayon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -688,12 +714,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Loriland.Rayon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -877,6 +905,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B5673B8829D7064C00B26B19 /* Rayon.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B5673B8929D7064C00B26B19 /* Inbounds.xcdatamodel */,
+			);
+			currentVersion = B5673B8929D7064C00B26B19 /* Inbounds.xcdatamodel */;
+			path = Rayon.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B50B3CCC29C1B779000414AC /* Project object */;
 }

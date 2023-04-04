@@ -11,13 +11,13 @@ struct TCP: View {
     @Binding var tcpSettings: TcpObject
     var body: some View {
         Form {
-            Toggle(isOn: $tcpSettings.http) {
+            Toggle(isOn: $tcpSettings.http ?? false) {
                 Text("HTTP Header")
             }
-            TextField("Host:", text: $tcpSettings.host)
-                .disabled(!tcpSettings.http)
-            TextField("Path:", text: $tcpSettings.path)
-                .disabled(!tcpSettings.http)
+            TextField("Host:", text: $tcpSettings.host ?? "")
+                .disabled(tcpSettings.http ?? false)
+            TextField("Path:", text: $tcpSettings.path ?? "")
+                .disabled(tcpSettings.http ?? false)
         }
         .frame(width: 300)
     }

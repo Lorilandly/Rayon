@@ -14,11 +14,13 @@
  * 4. index out of range when removing server
  *
  * TODO
- * 1. Check server configuration correctness
- * 2. Routing save button/model
- * 3. Backend
- * 4. Menu
- * 5. use swiftui for menu item (maybe after I finally decide to upgrade to macos 13)
+ * 1. Use CoreData to store configurations
+ * 2. Check server configuration correctness
+ * 3. Routing save button/model && default direct/route
+ * 4. Backend
+ * 4.1. Buy developer account to use network extension
+ * 5. Menu interaction
+ * 5.1. use swiftui for menu item (maybe after I finally decide to upgrade to macos 13)
  
  focused binding
  */
@@ -38,6 +40,7 @@ struct RayonApp: App {
         #if os(macOS)
         Settings {
             SettingsView()
+                .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
                 .onAppear {
                     NSApplication.show()
                 }
