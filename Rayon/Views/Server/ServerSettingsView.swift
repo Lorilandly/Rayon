@@ -37,7 +37,7 @@ struct ServerSettingsView: View {
             serverData = newServer.data
             let tmp = JSONEncoder()
             do {
-                let data = try tmp.encode(serverData.streamSettings)
+                let data = try tmp.encode(newServer)
                 let jsonstr = String(data: data, encoding: .utf8)!
                 print(jsonstr)
             } catch {}

@@ -24,19 +24,19 @@ struct VLESS: View {
             HStack {
                 Text("ID:")
                     .frame(width: leading_text_width, alignment: .trailing)
-                TextField("placeholder", text: $protocol_config.users.first!.id)
+                TextField("placeholder", text: $protocol_config.id)
             }
             HStack {
                 Text("Flow:")
                     .frame(width: leading_text_width, alignment: .trailing)
-                Picker("Flow:", selection: $protocol_config.users.first!.flow) {
+                Picker("Flow:", selection: $protocol_config.flow) {
                     Text("none").tag(nil as VlessSettingsObject.Flow?)
                     ForEach(VlessSettingsObject.Flow.allCases) { flow in
                         Text(flow.rawValue).tag(flow as VlessSettingsObject.Flow?)
                     }
                 }
                 .labelsHidden()
-                Picker("Encryption:", selection: $protocol_config.users.first!.encryption) {
+                Picker("Encryption:", selection: $protocol_config.encryption) {
                     ForEach(VlessSettingsObject.Encryption.allCases) { option in
                         Text(option.rawValue)
                     }

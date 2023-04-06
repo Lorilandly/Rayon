@@ -15,9 +15,9 @@ struct TCP: View {
                 Text("HTTP Header")
             }
             TextField("Host:", text: $tcpSettings.host ?? "")
-                .disabled(tcpSettings.http ?? false)
+                .disabled(!(tcpSettings.http ?? false))
             TextField("Path:", text: $tcpSettings.path ?? "")
-                .disabled(tcpSettings.http ?? false)
+                .disabled(!(tcpSettings.http ?? false))
         }
         .frame(width: 300)
     }
